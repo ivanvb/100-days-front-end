@@ -6,12 +6,16 @@
     --hover-color: pink;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     background-color: var(--primary-color);
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 48px;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +78,11 @@ body {
     margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.button:disabled {
+    background-color: gainsboro;
+    border-color: gray;
 }
 
 /* */

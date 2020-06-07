@@ -1,4 +1,5 @@
-const [addButton] = document.getElementsByClassName('form');
+const [form] = document.getElementsByClassName('form');
+const [addButton] = document.getElementsByClassName('button__add');
 const [startButton] = document.getElementsByClassName('button__start');
 const inputField = document.getElementById('text_field');
 const wordsContainer = document.getElementById('container');
@@ -8,17 +9,24 @@ const DEFAULT_SECONDS = 2;
 
 const words = [];
 
-addButton.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    words.push(inputField.value);
-    inputField.value = '';
+    if (inputField.value !== '') {
+        words.push(inputField.value);
+        inputField.value = '';
+        setDisabled(startButton, false);
+    }
 });
+
+function setDisabled(button, value) {
+    button.disabled = value;
+}
 
 startButton.addEventListener('click', submit);
 
 document.addEventListener('keydown', (e) => {
     const ctrlEnterIsPressed = e.code === 'Enter' && e.ctrlKey;
-    if (ctrlEnterIsPressed) {
+    if (ctrlEnterIsPressed && startButton.disabled === false) {
         submit();
     }
 });
@@ -33,6 +41,9 @@ function submit() {
         ${words.map((word) => `<p>${word}</p>`).join('\n')}
     `;
     wordsContainer.classList.add('scroller');
+    setDisabled(startButton, true);
+    setDisabled(addButton, true);
+    setDisabled(secondsField, true);
 }
 
 function addKeyframes(words, seconds) {
