@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const BASE_PATH = './days/';
+const BASE_PATH = './public/days/';
 const directoriesMetadata = [];
 
 (function main() {
@@ -11,20 +11,16 @@ const directoriesMetadata = [];
 
 function setDirectoriesMetadata(daysDirectories) {
     for (const directory of daysDirectories) {
-        const path = `${BASE_PATH}/${directory}/index.html`;
+        const path = `${BASE_PATH}${directory}/index.html`;
         const html = fs.readFileSync(path, 'utf8');
         const [title] = /(?<=<title>).*(?=<\/title>)/.exec(html);
 
         directoriesMetadata.push({
             title,
             day: directory.split('-')[1],
-            path: setRelativeDirectoryToParentDirectory(path),
+            path: path.replace('public/', ''),
         });
     }
-}
-
-function setRelativeDirectoryToParentDirectory(relativeDirectory) {
-    return `.${relativeDirectory}`;
 }
 
 function createDirectoriesScript() {
