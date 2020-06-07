@@ -1,0 +1,11 @@
+{
+    "name": "100-days",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/ivb98/100-days-front-end.git",
+    "author": "ivb98 <ivanvalette@hotmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "node ./build/index.js"
+    }
+}
