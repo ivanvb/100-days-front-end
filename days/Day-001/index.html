@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Text Vertical Scroller</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="seconds_container">
+            <input
+                name="seconds"
+                class="input_field seconds_field focuseable"
+                placeholder="2"
+                type="number"
+                min="1"
+            />
+            <span>SECONDS</span>
+        </div>
+        <div class="slot">
+            <div id="container">
+                <span>Scroller</span>
+            </div>
+        </div>
+        <div>
+            <form class="form" autocomplete="off">
+                <input
+                    class="focuseable input_field"
+                    name="word"
+                    placeholder="Insert a word"
+                    maxlength="12"
+                    id="text_field"
+                />
+                <div class="buttons_container">
+                    <button
+                        title="You can also press enter!"
+                        type="submit"
+                        class="focuseable button button__add"
+                    >
+                        Add
+                    </button>
+                    <button
+                        title="You can also press ctrl+enter"
+                        class="focuseable button button__start"
+                    >
+                        Start!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="./index.js"></script>
+</html>
