@@ -1,0 +1,152 @@
+:root {
+    --container-height: 325px;
+    --sand: #e0d070;
+    --dark: #272b34ff;
+    --dark-transparent: #272b3400;
+    --floor-height: 0.35;
+    --piramid-height: 100px;
+    --piramid-angle: 85px;
+
+    --piramid-alpha: 0.6;
+    --piramid-shadow: #c4c4c4;
+
+    --day-duration: 6s;
+
+    --sun-size: 40px;
+}
+
+body {
+    background-color: var(--dark);
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    height: var(--container-height);
+    width: var(--container-height);
+    background-color: #7ddffc;
+    border-radius: var(--container-height);
+    overflow: hidden;
+}
+
+.film {
+    background-color: var(--dark);
+    height: calc(var(--container-height) * 1.1);
+    width: calc(var(--container-height) * 1.1);
+    border-radius: var(--container-height);
+    animation: darken-an var(--day-duration) linear infinite;
+    z-index: 100;
+}
+
+@keyframes darken-an {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.sand {
+    background-color: var(--sand);
+    height: calc(var(--container-height) * var(--floor-height));
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.left-piramid-shadow {
+    position: absolute;
+    bottom: calc(var(--container-height) * var(--floor-height));
+    left: 50%;
+    transform: translateX(-70%);
+
+    height: 0;
+    width: 0;
+    border-left: 100px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid white;
+
+    animation: day-left var(--day-duration) linear infinite;
+}
+
+.right-piramid-shadow {
+    position: absolute;
+    bottom: calc(var(--container-height) * var(--floor-height));
+    left: 50%;
+    transform: translateX(39%) skew(26.5deg);
+
+    height: 0;
+    width: 0;
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+    animation: day-right var(--day-duration) linear infinite;
+    border-bottom: 100px solid var(--piramid-shadow);
+}
+
+.sun {
+    height: var(--sun-size);
+    width: var(--sun-size);
+    background-color: #fff001;
+    box-shadow: 0 0 1pt 1pt rgba(0, 0, 0, 0.1);
+    border-radius: var(--sun-size);
+    position: absolute;
+    top: 20%;
+    left: 4%;
+    transform-origin: 375% 250%;
+    animation: rotate var(--day-duration) linear infinite;
+}
+
+@keyframes rotate {
+    10% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes day-right {
+    10% {
+        border-bottom: 100px solid var(--piramid-shadow);
+    }
+
+    50% {
+        border-bottom: 100px solid white;
+    }
+
+    100% {
+        border-bottom: 100px solid var(--piramid-shadow);
+    }
+}
+
+@keyframes day-left {
+    10% {
+        border-bottom: 100px solid white;
+    }
+
+    50% {
+        border-bottom: 100px solid var(--piramid-shadow);
+    }
+
+    100% {
+        border-bottom: 100px solid white;
+    }
+}
