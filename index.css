@@ -1,0 +1,15 @@
+#container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#container > a {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #container > a {
+        width: calc(100% / 3);
+    }
+}
