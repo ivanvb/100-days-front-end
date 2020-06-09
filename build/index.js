@@ -27,7 +27,7 @@ function createDirectoriesScript() {
     const script = `
         const container = document.getElementById('container');
         const links = [${directoriesMetadata.map((day) => {
-            return '\'<a href="' + day.path + '">' + day.title + "</a>',";
+            return '\'<a href="' + day.path + '">' + day.title + "</a>'";
         })}]
         container.innerHTML = links.join("\\n")
     `;
