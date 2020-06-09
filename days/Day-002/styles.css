@@ -1,0 +1,76 @@
+:root {
+    --speed: 1.5s;
+    --red: #831106;
+    --blue: #85cae9;
+}
+
+body {
+    background-color: #3faf81;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    transform-origin: -100% -100%;
+    background-color: white;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    animation: spinning var(--speed) infinite linear, color var(--speed) infinite linear;
+}
+
+.inverse {
+    animation: spinning_inverse var(--speed) infinite linear,
+        color_inverse var(--speed) infinite linear;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinning_inverse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color: var(--red);
+    }
+
+    50% {
+        background-color: var(--blue);
+    }
+
+    100% {
+        background-color: var(--red);
+    }
+}
+
+@keyframes color_inverse {
+    0% {
+        background-color: var(--blue);
+    }
+
+    50% {
+        background-color: var(--red);
+    }
+
+    100% {
+        background-color: var(--blue);
+    }
+}
