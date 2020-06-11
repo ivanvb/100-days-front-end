@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Click and Squeeze</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="parent absolute-center">
+            <div class="shape"></div>
+            <span class="absolute-center">Click Me!</span>
+        </div>
+    </body>
+    <script>
+        const [shape] = document.getElementsByClassName('shape');
+        const [parent] = document.getElementsByClassName('parent');
+        parent.addEventListener('click', () => {
+            shape.classList.remove('animation');
+            setTimeout(() => {
+                shape.classList.add('animation');
+            }, 0);
+        });
+    </script>
+</html>
