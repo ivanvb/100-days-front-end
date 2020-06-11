@@ -1,0 +1,66 @@
+body {
+    background-color: aquamarine;
+}
+
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parent {
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3));
+}
+
+.shape {
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 19%, 100% 84%, 50% 100%, 0 85%, 0 19%);
+}
+
+.animation {
+    animation: mutate 2s ease-in-out forwards;
+}
+
+span,
+.shape {
+    cursor: pointer;
+}
+
+@keyframes mutate {
+    0% {
+        clip-path: polygon(50% 0%, 100% 19%, 100% 84%, 50% 100%, 0 85%, 0 19%);
+    }
+
+    30% {
+        clip-path: polygon(47% 25%, 100% 25%, 100% 75%, 50% 75%, 0% 75%, 0% 25%);
+    }
+
+    40% {
+        clip-path: polygon(48% 30%, 100% 25%, 100% 75%, 50% 68%, 0% 75%, 0% 25%);
+    }
+
+    50% {
+        clip-path: polygon(47% 25%, 100% 25%, 100% 75%, 50% 75%, 0% 75%, 0% 25%);
+    }
+
+    60% {
+        clip-path: polygon(48% 30%, 100% 25%, 100% 75%, 50% 68%, 0% 75%, 0% 25%);
+    }
+
+    70% {
+        clip-path: polygon(47% 25%, 100% 25%, 100% 75%, 50% 75%, 0% 75%, 0% 25%);
+    }
+
+    100% {
+        clip-path: polygon(50% 0%, 100% 19%, 100% 84%, 50% 100%, 0 85%, 0 19%);
+    }
+}
