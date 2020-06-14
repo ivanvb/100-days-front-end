@@ -1,0 +1,116 @@
+:root {
+    --box-dimensions: 100px;
+    --box-dimensions-medium: 200px;
+    --duration: 5s;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    height: var(--box-dimensions);
+    width: calc(var(--box-dimensions) * 2.5);
+    background-color: #333;
+    border: 10px solid black;
+    border-radius: var(--box-dimensions);
+    display: flex;
+    align-items: center;
+}
+
+.traffic-light {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.circle {
+    height: calc(var(--box-dimensions) * 0.65);
+    width: calc(var(--box-dimensions) * 0.65);
+    border-radius: var(--box-dimensions);
+    opacity: 0.5;
+}
+
+.red {
+    background-color: red;
+    animation: light-red var(--duration) linear infinite;
+}
+
+.yellow {
+    background-color: yellow;
+    animation: light-yellow var(--duration) linear infinite;
+}
+
+.green {
+    background-color: green;
+    animation: light-green var(--duration) linear infinite;
+}
+
+@keyframes light-green {
+    0% {
+        opacity: 0.5;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes light-yellow {
+    0% {
+        opacity: 0.5;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes light-red {
+    0% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --box-dimensions: var(--box-dimensions-medium);
+    }
+}

@@ -7,5 +7,6 @@
     "license": "MIT",
     "scripts": {
         "build": "node ./build/index.js"
-    }
+    },
+    "dependencies": {}
 }
