@@ -1,0 +1,125 @@
+:root {
+    --pacman-height: 300px;
+    --yellow: yellow;
+    --eye-size: 20px;
+    --candy-size: 15px;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: darkseagreen;
+}
+
+.eye {
+    height: var(--eye-size);
+    width: var(--eye-size);
+    border-radius: var(--eye-size);
+    background-color: black;
+    position: absolute;
+    left: 58%;
+    top: 37%;
+}
+
+.box {
+    height: 400px;
+    width: 400px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top {
+    background-color: var(--yellow);
+    height: calc(var(--pacman-height) / 4);
+    width: calc(var(--pacman-height) / 2);
+    border-radius: calc(var(--pacman-height) / 2) calc(var(--pacman-height) / 2) 0 0;
+    transform-origin: 50% 100%;
+    animation: eat-top 700ms linear infinite;
+}
+
+.bottom {
+    background-color: var(--yellow);
+    height: calc(var(--pacman-height) / 4);
+    width: calc(var(--pacman-height) / 2);
+    border-radius: 0 0 calc(var(--pacman-height) / 2) calc(var(--pacman-height) / 2);
+    transform-origin: 50% 0%;
+    animation: eat-bottom 700ms linear infinite;
+}
+
+.food {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    position: absolute;
+    left: 100%;
+    z-index: -1000;
+    animation: food-anim 1.5s linear infinite;
+    opacity: 1;
+}
+
+@keyframes food-anim {
+    0% {
+        left: 80%;
+        opacity: 1;
+    }
+
+    60% {
+        left: 20%;
+        opacity: 1;
+    }
+
+    61% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.candy {
+    height: var(--candy-size);
+    width: var(--candy-size);
+    border-radius: var(--candy-size);
+    background-color: pink;
+}
+
+@keyframes eat-top {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+
+    0% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes eat-bottom {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(45deg);
+    }
+
+    0% {
+        transform: rotate(0deg);
+    }
+}
