@@ -45,7 +45,7 @@ a {
     text-decoration: none;
 }
 
-a:visited {
+a {
     color: #333;
 }
 
@@ -98,5 +98,9 @@ article {
 
     .sidenav {
         width: 45%;
+    }
+
+    #sidenav-button {
+        width: 45px;
     }
 }
