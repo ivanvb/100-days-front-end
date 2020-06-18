@@ -68,8 +68,8 @@ p {
 
 .line {
     height: 2px;
-    margin: 2.5px 0;
-    width: 100%;
+    margin: 2px 0;
+    width: 25px;
     border-radius: 100px;
     background-color: white;
 }
@@ -91,6 +91,7 @@ p {
         align-items: flex-start;
         transition: max-height 300ms;
         max-height: 0px;
+        overflow: auto;
     }
 
     #navbar #links li {
