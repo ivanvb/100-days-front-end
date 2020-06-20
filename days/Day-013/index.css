@@ -76,12 +76,3 @@ body {
         width: calc(var(--eye-height) * 0.1);
     }
 }
-
-.mouth {
-    height: 52px;
-    width: 148px;
-    background-color: white;
-    border-radius: 0 0 50% 50%/0 0 100% 100%;
-    z-index: -10;
-    margin-top: -10px;
-}
