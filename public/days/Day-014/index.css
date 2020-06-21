@@ -1,0 +1,53 @@
+body {
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.absolute-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    overflow: hidden;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#arrow {
+    font-size: 1.4em;
+    transition: transform 300ms;
+}
+
+.title {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+}
+
+.paragraph {
+    transition: max-height 300ms ease-out;
+    max-height: 0;
+    line-height: 20px;
+}
+
+@media (max-width: 486px) {
+    .collapsible {
+        width: 300px;
+    }
+}
