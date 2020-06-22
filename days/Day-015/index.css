@@ -1,0 +1,280 @@
+:root {
+    --radius: 40;
+    --circle-radius: var(--radius);
+    --circumference: calc(var(--radius) * 2 * 3.14);
+
+    --board-dimensions: 350px;
+
+    --line-width-horizontal: var(--board-dimensions);
+    --line-height-horizontal: 10px;
+
+    --delay: 125ms;
+
+    --draw-animation: 1s;
+
+    --x-color: #67cbff;
+    --o-color: #ff6780;
+    --background-color: #f4faff;
+    --black: #282631;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+}
+
+h1 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bolder;
+}
+
+h1 > .red {
+    color: var(--o-color);
+}
+
+h1 > .blue {
+    color: var(--x-color);
+}
+
+.line {
+    overflow: hidden;
+}
+
+.line.horizontal {
+    width: var(--line-width-horizontal);
+    height: var(--line-height-horizontal);
+    border-radius: 10px;
+    position: relative;
+}
+
+.line.vertical {
+    height: var(--line-width-horizontal);
+    width: var(--line-height-horizontal);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+}
+
+#h-1 {
+    top: calc((100% / 3) - calc(var(--line-height-horizontal) / 2));
+}
+
+#h-2 {
+    top: calc((100% / 3) * 2 - calc(var(--line-height-horizontal)));
+}
+
+#v-1 {
+    left: calc((100% / 3) - calc(var(--line-height-horizontal) / 2));
+}
+
+#v-2 {
+    left: calc((100% / 3) * 2 - calc(var(--line-height-horizontal) / 2));
+}
+
+.grid {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--line-height-horizontal);
+}
+
+.box {
+    cursor: pointer;
+    top: 0%;
+    position: relative;
+}
+
+.box > div,
+.box > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fill {
+    background-color: var(--black);
+}
+
+.horizontal .fill {
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    border-radius: 10px;
+}
+
+.vertical .fill {
+    height: 100%;
+    width: 100%;
+    transform: translateY(-100%);
+    border-radius: 10px;
+}
+
+#h-1 > .fill {
+    animation: appearHorizontal 1s linear forwards;
+}
+
+#h-2 > .fill {
+    animation: appearHorizontal 1s linear forwards var(--delay);
+}
+
+#v-1 > .fill {
+    animation: appearVertical 1s linear forwards calc(var(--delay) * 2);
+}
+
+#v-2 > .fill {
+    animation: appearVertical 1s linear forwards calc(var(--delay) * 3);
+}
+
+.board {
+    position: relative;
+    height: var(--board-dimensions);
+    width: var(--board-dimensions);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes appearHorizontal {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appearVertical {
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.x {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.x-line {
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.shell > .x-line {
+    transform: translateX(-150%);
+    background-color: var(--x-color);
+    transition: background-color var(--draw-animation);
+}
+
+.first-x-diagonal > .x-line {
+    animation: draw calc(var(--draw-animation) / 2) linear forwards;
+}
+
+.second-x-diagonal > .x-line {
+    animation: draw calc(var(--draw-animation) / 2) linear forwards calc(var(--draw-animation) / 2);
+}
+.first-x-diagonal {
+    transform: rotate(45deg);
+}
+
+.second-x-diagonal {
+    transform: rotate(-45deg);
+}
+
+@keyframes draw {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.box > .progress-ring {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    height: calc(var(--board-dimensions) / 3);
+    width: calc(var(--board-dimensions) / 3);
+}
+.progress-ring-circle {
+    stroke-dasharray: var(--circumference) var(--circumference);
+    stroke-linecap: round;
+    stroke-dashoffset: var(--circumference);
+    animation: spin var(--draw-animation) linear forwards;
+    stroke: var(--o-color);
+    transition: stroke var(--draw-animation);
+}
+
+#bottom-panel {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#announcement {
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#bottom-panel button {
+    background-color: white;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--black);
+    border-bottom: 3px solid black;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    from {
+        stroke-dashoffset: 250px;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (max-width: 486px) {
+    :root {
+        --board-dimensions: 275px;
+        --circle-radius: 25px;
+    }
+
+    #bottom-panel {
+        bottom: 18%;
+    }
+}

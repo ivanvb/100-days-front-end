@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic Tac Toe ❎🅾</title>
+        <link href="./reset.css" rel="stylesheet" />
+        <link href="./index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1><span class="red">Tic</span> Tac <spa class="blue">Toe</span></h1>
+        <div class="absolute-center">
+            <div class="board">
+                <div class="container">
+                    <div class="grid">
+                        <div class="box" id="pos-0"></div>
+                        <div class="box" id="pos-1"></div>
+                        <div class="box" id="pos-2"></div>
+                        <div class="box" id="pos-3"></div>
+                        <div class="box" id="pos-4"></div>
+                        <div class="box" id="pos-5"></div>
+                        <div class="box" id="pos-6"></div>
+                        <div class="box" id="pos-7"></div>
+                        <div class="box" id="pos-8"></div>
+                    </div>
+                    <div class="horizontal line" id="h-1">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="horizontal line" id="h-2">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="vertical line" id="v-1">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="vertical line" id="v-2">
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-panel">
+            <p id="announcement"></p>
+            <button  onClick="window.location.reload();">RESET</button>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>
