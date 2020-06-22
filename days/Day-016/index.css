@@ -1,0 +1,60 @@
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    margin: auto;
+    margin-top: 30px;
+    overflow-x: hidden;
+    max-width: 768px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 500ms;
+}
+
+.carousel > div {
+    flex-shrink: 0;
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div > img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+div > button {
+    margin: 20px 30px;
+    background-color: white;
+    font-size: 1.8rem;
+    padding: 2px 10px;
+    border: none;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    line-height: 40px;
+}
+
+div > button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+@media (max-width: 486px) {
+    .container {
+        margin-top: 0;
+    }
+}
