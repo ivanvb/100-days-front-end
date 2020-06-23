@@ -10,6 +10,7 @@ jobs:
                   persis-credentials: false
 
             - name: Install and build
+              run: npm install
               run: npm run build
 
             - name: Deploy
