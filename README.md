@@ -17,3 +17,5 @@ For the duration of this project I will build a mini project using only HTML, CS
 The only exception to this happens in the build process, where I will use my own build scripts to dynamically add each day's project to the [Homescreen](https://ivb98.github.io/100-days-front-end/), for this I may also install some external libraries if needed as this has nothing to do with front end development.
 
 Also, I may use some tools such as [Webpack](https://webpack.js.org/) or [PostCSS](https://postcss.org/) to add compatibility with older browsers.
+
+**Note:** To reset browser defaults I've included a generic `reset.css` file in some of the projects when I find it necessary.
