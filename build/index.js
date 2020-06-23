@@ -1,4 +1,5 @@
 const fs = require('fs');
+const prettier = require('prettier');
 
 const BASE_PATH = './public/days/';
 const directoriesMetadata = [];
@@ -24,12 +25,17 @@ function setDirectoriesMetadata(daysDirectories) {
 }
 
 function createDirectoriesScript() {
+    const projectsHTML = directoriesMetadata.map((day) => {
+        return `
+        '<div class="project"><h2 class="title">${day.title}</h2><h3 class="day">Day ${day.day}</h3><a class="project-link" href="${day.path}">View Project</a></div>'
+        `;
+    });
     const script = `
         const container = document.getElementById('container');
-        const links = [${directoriesMetadata.map((day) => {
-            return '\'<a href="' + day.path + '">' + day.title + "</a>'";
-        })}]
+        const links = [${projectsHTML}]
         container.innerHTML = links.join("\\n")
     `;
-    fs.writeFileSync('./public/projects.js', script, 'utf8');
+
+    let formatted = prettier.format(script, { parser: 'babel' });
+    fs.writeFileSync('./public/projects.js', formatted, 'utf8');
 }
