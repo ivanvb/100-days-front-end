@@ -18,5 +18,6 @@ const links = [
   '<div class="project"><h2 class="title">Carousel First Iteration</h2><h3 class="day">Day 016</h3><a class="project-link" href="./days/Day-016/index.html">View Project</a></div>',
   '<div class="project"><h2 class="title">iPhone 📱</h2><h3 class="day">Day 017</h3><a class="project-link" href="./days/Day-017/index.html">View Project</a></div>',
   '<div class="project"><h2 class="title">Search In Document 🔎</h2><h3 class="day">Day 018</h3><a class="project-link" href="./days/Day-018/index.html">View Project</a></div>',
+  '<div class="project"><h2 class="title">Rotating Loader</h2><h3 class="day">Day 019</h3><a class="project-link" href="./days/Day-019/index.html">View Project</a></div>',
 ];
 container.innerHTML = links.join("\n");
