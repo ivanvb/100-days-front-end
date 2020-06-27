@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_PATH = './public/days/';
+const BASE_PATH = './src/days/';
 const directoriesMetadata = [];
 
 (function main() {
@@ -19,7 +19,7 @@ function setDirectoriesMetadata(daysDirectories) {
         directoriesMetadata.push({
             title,
             day: directory.split('-')[1],
-            path: indexPath.replace('public/', ''),
+            path: indexPath.replace('src/', ''),
         });
     }
 }
