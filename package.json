@@ -7,7 +7,7 @@
     "license": "MIT",
     "scripts": {
         "generateIndex": "node ./build/index.js",
-        "parcel": "parcel build ./src/index.build.html --public-url .. --no-source-maps",
+        "parcel": "parcel build ./src/index.build.html --public-url ../.. --no-source-maps",
         "build": "yarn generateIndex && yarn parcel",
         "postbuild": "node ./build/postbuild.js"
     },
