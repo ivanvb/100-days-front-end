@@ -18,4 +18,4 @@ The only exception to this happens in the build process, where I will use my own
 
 Also, I may use some tools such as [Webpack](https://webpack.js.org/) or [PostCSS](https://postcss.org/) to add compatibility with older browsers.
 
-**Note:** To reset browser defaults I've included a generic `reset.css` file in some of the projects when I find it necessary.
+**Note:** To reset browser default I've included a generic `reset.css` file in some of the projects when I find it necessary.

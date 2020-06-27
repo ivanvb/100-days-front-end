@@ -1,4 +1,7 @@
 **/projects.js
 **/node_modules/**
+**/dist/**
+index.build.html
 
+.cache
 .vscode

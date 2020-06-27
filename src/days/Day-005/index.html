@@ -12,14 +12,5 @@
             <span class="absolute-center">Click Me!</span>
         </div>
     </body>
-    <script>
-        const [shape] = document.getElementsByClassName('shape');
-        const [parent] = document.getElementsByClassName('parent');
-        parent.addEventListener('click', () => {
-            shape.classList.remove('animation');
-            setTimeout(() => {
-                shape.classList.add('animation');
-            }, 0);
-        });
-    </script>
+    <script src="./index.js"></script>
 </html>

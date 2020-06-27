@@ -10,11 +10,11 @@ jobs:
                   persis-credentials: false
 
             - name: Install and build
-              run: npm install && npm run build
+              run: yarn install && yarn build
 
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@releases/v3
               with:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   BRANCH: gh-pages
-                  FOLDER: public
+                  FOLDER: build
