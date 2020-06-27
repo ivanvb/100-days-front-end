@@ -1,0 +1,99 @@
+:root {
+    --height: 400px;
+    --width: 350px;
+    --white: #e3edf7;
+
+    --timing: 300ms;
+    --spacing: 10px;
+    --accent: #667eea;
+}
+
+body {
+    background-color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    transform: translateX(-100%);
+}
+
+.container > div {
+    flex-shrink: 0;
+    width: calc(100% - calc(var(--spacing) * 2));
+    margin: 0 var(--spacing);
+}
+.calendar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--white);
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    width: var(--width);
+    box-shadow: -11px 11px 31px #ccd5de, 11px -11px 31px #faffff;
+    padding: calc(var(--spacing) * 2) calc(var(--spacing));
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding-top: 10px;
+}
+
+.week-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.inactive {
+    opacity: 0.4;
+}
+
+.move-left {
+    animation: move-left-a var(--timing) linear backwards;
+}
+@keyframes move-left-a {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.move-right {
+    animation: move-right-a var(--timing) linear backwards;
+}
+@keyframes move-right-a {
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+.left-arrow,
+.right-arrow {
+    cursor: pointer;
+}
+
+.current {
+    background: #667eea;
+    border-radius: 100%;
+    padding: 7.5px;
+    color: var(--white);
+}
