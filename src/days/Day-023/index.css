@@ -1,0 +1,130 @@
+:root {
+    --container-dimensions: 300px;
+
+    --ball-height: calc(var(--container-dimensions) / 4);
+    --animation-duration: 3s;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #36399a;
+}
+
+.container {
+    height: var(--container-dimensions);
+    width: var(--container-dimensions);
+    position: relative;
+    padding: 40px;
+}
+
+.ball {
+    height: var(--ball-height);
+    width: var(--ball-height);
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - calc(var(--ball-height) / 2));
+}
+
+.ball:nth-child(1) {
+    transform: translateX(0%);
+    border-radius: 50px;
+    background-color: #7174db;
+    animation: move-1 var(--animation-duration) linear infinite;
+}
+
+.ball:nth-child(2) {
+    transform: translateX(150%) scale(1.5);
+    border-radius: 50px;
+    background-color: #e52a6e;
+
+    animation: move-2 var(--animation-duration) linear infinite;
+}
+
+.ball:nth-child(3) {
+    transform: translateX(300%);
+    background-color: #fed430;
+
+    animation: move-3 var(--animation-duration) linear infinite;
+}
+
+@keyframes move-1 {
+    0% {
+        transform: translateX(0%) scale(1);
+        z-index: 0;
+    }
+
+    23%,
+    33% {
+        transform: translateX(150%) scale(1.5);
+        z-index: 10;
+    }
+
+    56%,
+    66% {
+        transform: translateX(300%) scale(1);
+        z-index: 0;
+    }
+
+    90%,
+    100% {
+        transform: translateX(0%) scale(1);
+        z-index: 0;
+    }
+}
+
+@keyframes move-2 {
+    0% {
+        transform: translateX(150%) scale(1.5);
+        z-index: 10;
+    }
+
+    23%,
+    33% {
+        transform: translateX(300%) scale(1);
+        z-index: 0;
+    }
+
+    56%,
+    66% {
+        transform: translateX(0%) scale(1);
+        z-index: 0;
+    }
+
+    90%,
+    100% {
+        transform: translateX(150%) scale(1.5);
+        z-index: 10;
+    }
+}
+
+@keyframes move-3 {
+    0% {
+        transform: translateX(300%) scale(1);
+        z-index: 0;
+    }
+
+    23%,
+    33% {
+        transform: translateX(0%) scale(1);
+        z-index: 0;
+    }
+
+    56%,
+    66% {
+        transform: translateX(150%) scale(1.5);
+        z-index: 10;
+    }
+
+    90%,
+    100% {
+        transform: translateX(300%) scale(1);
+        z-index: 0;
+    }
+}
