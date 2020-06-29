@@ -83,4 +83,8 @@ article {
         margin-left: var(--small-margin);
         margin-right: var(--small-margin);
     }
+
+    .highlight::after {
+        max-width: 150%;
+    }
 }
