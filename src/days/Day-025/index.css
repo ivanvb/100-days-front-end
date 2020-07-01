@@ -1,0 +1,137 @@
+:root {
+    --line-height: 3px;
+    --scale: 8.5;
+    --line-initial-width: 50px;
+    --line-transition-duration: 500ms;
+
+    --duration: 1.2s;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a627a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.line {
+    width: var(--line-initial-width);
+    height: var(--line-height);
+    background-color: white;
+}
+
+.container {
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    opacity: 0;
+    transition: opacity calc(var(--duration) / 3) linear 250ms, color 200ms linear;
+}
+
+a:active,
+a:hover {
+    color: lightgray;
+}
+
+.active > .line:nth-of-type(1) {
+    animation: open-top ease-in-out var(--duration) forwards;
+}
+
+.active > .line:nth-of-type(2) {
+    animation: open-bottom ease-in-out var(--duration) forwards;
+}
+
+.active a {
+    opacity: 1;
+}
+
+.inactive > .line:nth-of-type(1) {
+    animation: close-top ease-in-out var(--duration) forwards;
+}
+
+.inactive > .line:nth-of-type(2) {
+    animation: close-bottom ease-in-out var(--duration) forwards;
+}
+
+@keyframes open-top {
+    0% {
+        transform: translateY(0%);
+    }
+
+    20% {
+        transform: translateY(-850%);
+    }
+
+    60%,
+    100% {
+        transform: translateY(-850%) scaleX(var(--scale));
+    }
+}
+
+@keyframes close-top {
+    0% {
+        transform: translateY(-850%) scaleX(var(--scale));
+    }
+
+    40% {
+        transform: translateY(-850%);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0%) scaleX(1);
+    }
+}
+
+@keyframes open-bottom {
+    0% {
+        transform: translateY(0%);
+    }
+
+    20% {
+        transform: translateY(850%);
+    }
+
+    60%,
+    100% {
+        transform: translateY(850%) scaleX(var(--scale));
+    }
+}
+
+@keyframes close-bottom {
+    0% {
+        transform: translateY(850%) scaleX(var(--scale));
+    }
+
+    40% {
+        transform: translateY(850%);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0%) scaleX(1);
+    }
+}
