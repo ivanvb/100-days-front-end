@@ -1,0 +1,154 @@
+:root {
+    --black-background: #121214;
+    --red-background: #aa392e;
+    --white-background: #9f9b98;
+    --blue-background: #1b1c38;
+
+    --product-height: 400px;
+    --product-width: 275px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    color: white;
+}
+
+.container {
+    width: var(--product-width);
+    height: var(--product-height);
+    position: relative;
+    overflow: hidden;
+}
+
+.product {
+    position: absolute;
+    height: var(--product-height);
+    width: 100%;
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+}
+
+.product > * {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1000ms ease;
+}
+
+.product > .title {
+    transform: translate(-50%, -1200%) scale(3);
+    opacity: 0;
+}
+
+.product > .beats-image {
+    transform: translateX(-50%) scale(5);
+    opacity: 0;
+}
+
+.product > .price {
+    transform: translate(-50%, 800%);
+    opacity: 0;
+}
+
+.product:target {
+    opacity: 1;
+}
+
+.product:target > * {
+    opacity: 1;
+    transform: translate(-50%, 0%) scale(1);
+}
+
+#product-black {
+    background-color: var(--black-background);
+}
+
+#product-red {
+    background-color: var(--red-background);
+}
+
+#product-white {
+    background-color: var(--white-background);
+}
+
+#product-blue {
+    background-color: var(--blue-background);
+}
+
+.title {
+    top: 10%;
+    text-align: center;
+    width: 100%;
+}
+
+.title > .name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.title > .headphones-color {
+    font-size: 0.9rem;
+}
+
+.beats-image {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    top: 25%;
+}
+
+.price {
+    top: 80%;
+    font-size: 0.9rem;
+}
+
+.color-rows {
+    top: 90%;
+    left: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.color {
+    border: 1px solid white;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.red {
+    background-color: var(--red-background);
+}
+
+.blue {
+    background-color: var(--blue-background);
+}
+
+.black {
+    background-color: var(--black-background);
+}
+
+.white {
+    background-color: var(--white-background);
+}
+
+@media (max-width: 486px) {
+    .container {
+        width: 100%;
+    }
+}
