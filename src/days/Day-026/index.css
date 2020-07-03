@@ -1,0 +1,161 @@
+:root {
+    --translate-top: 350%;
+    --translate-bottom: calc(var(--translate-top) * -1);
+    --width: 150px;
+    --height: 15px;
+
+    --default-animation-duration: 250ms;
+    --long-animation-duration: calc(var(--default-animation-duration) + 100ms);
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: var(--width);
+    height: calc(var(--height) * 8);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lines-container {
+    height: var(--height);
+    width: var(--width);
+    position: relative;
+    display: flex;
+}
+
+.line {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+}
+
+.line:nth-of-type(1) {
+    transform: translateY(var(--translate-top));
+}
+
+.line:nth-of-type(2) {
+    transform: translateY(var(--translate-bottom));
+}
+
+.container:not(.pristine):not(.active) .line:nth-of-type(1) {
+    animation: rotate-back-top var(--default-animation-duration) ease-in-out forwards,
+        move-top var(--default-animation-duration) linear forwards var(--long-animation-duration);
+}
+
+.container:not(.pristine):not(.active) .line:nth-of-type(2) {
+    animation: rotate-back-bottom var(--long-animation-duration) ease-in-out forwards,
+        move-bottom var(--default-animation-duration) linear forwards var(--long-animation-duration);
+}
+
+.container:not(.pristine):not(.active) .line:nth-of-type(3) {
+    opacity: 0;
+    animation: show 0s linear forwards var(--long-animation-duration);
+}
+
+.active .line:nth-of-type(1) {
+    animation: move-to-center var(--default-animation-duration) linear forwards,
+        rotate-top var(--default-animation-duration) ease-in-out forwards
+            var(--default-animation-duration);
+}
+
+.active .line:nth-of-type(2) {
+    animation: move-to-center var(--default-animation-duration) linear forwards,
+        rotate-bottom var(--long-animation-duration) ease-in-out forwards
+            var(--default-animation-duration);
+}
+
+.active .line:nth-of-type(3) {
+    animation: hide 0ms linear forwards var(--default-animation-duration);
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-to-center {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate-top {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+@keyframes rotate-bottom {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(0) rotate(135deg);
+    }
+}
+
+@keyframes rotate-back-top {
+    from {
+        transform: translateY(0) rotate(45deg);
+    }
+    to {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes rotate-back-bottom {
+    from {
+        transform: translateY(0) rotate(135deg);
+    }
+    to {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes move-top {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(var(--translate-top));
+    }
+}
+
+@keyframes move-bottom {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(var(--translate-bottom));
+    }
+}
