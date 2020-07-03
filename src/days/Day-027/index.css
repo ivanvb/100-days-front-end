@@ -1,0 +1,199 @@
+:root {
+    --background-color: #4c4c4c;
+    --clock-border-color: #3a3a3a;
+    --clock-background-color: #242424;
+    --ring-color: #ee5f5f;
+
+    --clock-dimensions: 300px;
+    --clock-ring-dimensions: calc(var(--clock-dimensions) * 0.97);
+    --radius: calc(var(--clock-ring-dimensions) / 2 * 0.98);
+    --circumference: calc(var(--radius) * 3.14 * 2);
+    --ring-width: calc(var(--clock-dimensions) * 0.01);
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.clock {
+    height: var(--clock-dimensions);
+    width: var(--clock-dimensions);
+    border-radius: var(--clock-dimensions);
+    border: 10px solid var(--clock-border-color);
+    background-color: var(--clock-background-color);
+    position: relative;
+}
+
+.data {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.time {
+    margin: 10px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time > .dots {
+    animation: blink 1s steps(2, start) infinite;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.ring {
+    height: var(--clock-ring-dimensions);
+    width: var(--clock-ring-dimensions);
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    top: 50%;
+    left: 50%;
+}
+
+.ring > circle {
+    cx: calc(var(--clock-ring-dimensions) / 2);
+    cy: calc(var(--clock-ring-dimensions) / 2);
+    r: var(--radius);
+    stroke-width: var(--ring-width);
+    stroke: var(--ring-color);
+    stroke-dasharray: var(--circumference) var(--circumference);
+    stroke-dashoffset: var(--circumference);
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        stroke-dashoffset: var(--circumference);
+    }
+
+    50% {
+        stroke-dashoffset: 0px;
+    }
+
+    100% {
+        stroke-dashoffset: calc(var(--circumference) * -1);
+    }
+}
+
+.seconds {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+}
+
+.point {
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.p1 {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p2 {
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.p3 {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p4 {
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.seconds:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.seconds:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotate(24deg);
+}
+
+.seconds:nth-of-type(3) {
+    transform: translate(-50%, -50%) rotate(48deg);
+}
+
+.seconds:nth-of-type(4) {
+    transform: translate(-50%, -50%) rotate(72deg);
+}
+
+.seconds:nth-of-type(5) {
+    transform: translate(-50%, -50%) rotate(96deg);
+}
+
+.seconds:nth-of-type(6) {
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.seconds:nth-of-type(7) {
+    transform: translate(-50%, -50%) rotate(144deg);
+}
+
+.seconds:nth-of-type(8) {
+    transform: translate(-50%, -50%) rotate(168deg);
+}
+
+.seconds:nth-of-type(9) {
+    transform: translate(-50%, -50%) rotate(192deg);
+}
+
+.seconds:nth-of-type(10) {
+    transform: translate(-50%, -50%) rotate(216deg);
+}
+
+.seconds:nth-of-type(11) {
+    transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.seconds:nth-of-type(12) {
+    transform: translate(-50%, -50%) rotate(264deg);
+}
+
+.seconds:nth-of-type(13) {
+    transform: translate(-50%, -50%) rotate(288deg);
+}
+
+.seconds:nth-of-type(14) {
+    transform: translate(-50%, -50%) rotate(312deg);
+}
+
+.seconds:nth-of-type(15) {
+    transform: translate(-50%, -50%) rotate(336deg);
+}
