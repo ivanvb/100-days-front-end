@@ -1,6 +1,8 @@
 :root {
     --background-color: #edf2f6;
     --text-color: #333;
+    --card-background-color: white;
+    --link-color: darkblue;
 
     --project-padding: 20px;
     --project-title-margin: 5px;
@@ -28,7 +30,7 @@ h1 {
 
 .project {
     height: 100px;
-    background-color: white;
+    background-color: var(--card-background-color);
     padding: calc(var(--project-padding) - var(--project-title-margin)) var(--project-padding);
     border-radius: 10px;
     box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1);
@@ -49,6 +51,19 @@ h3.day {
     position: absolute;
     bottom: var(--project-padding);
     text-decoration: none;
+}
+
+a {
+    color: var(--link-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #2e3748;
+        --text-color: white;
+        --card-background-color: #1a202c;
+        --link-color: skyblue;
+    }
 }
 
 @media (min-width: 486px) {
