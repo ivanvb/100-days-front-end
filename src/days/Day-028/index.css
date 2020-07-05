@@ -60,8 +60,9 @@ body {
     width: calc(var(--lamp-bulb-height) * 2.8);
     background-color: gray;
     position: absolute;
-    top: calc(0% + calc(var(--lamp-cord-height) - 1px) + calc(var(--lamp-top-height) - 1px));
+    top: calc(0% + calc(var(--lamp-cord-height) - 1px) + calc(var(--lamp-top-height) - 2px));
     left: 50%;
+    z-index: -1;
     transform: translateX(-50%);
     border-radius: 0 0 var(--lamp-bulb-height) var(--lamp-bulb-height);
     transition: background-color 150ms, box-shadow 150ms;
