@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="./reset.css" rel="stylesheet" />
+        <link href="./index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <script>
+            (function () {
+                const root = document.documentElement;
+                const darkMode = window.localStorage.getItem('darkMode');
+                const prefersDarkMode =
+                    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const darkTheme = darkMode !== null ? JSON.parse(darkMode) : prefersDarkMode;
+                if (darkMode === null) {
+                    window.localStorage.setItem('darkMode', prefersDarkMode);
+                }
+
+                const darkBackground = getComputedStyle(root).getPropertyValue('--dark-background');
+                const darkText = getComputedStyle(root).getPropertyValue('--dark-text');
+
+                const lightBackground = getComputedStyle(root).getPropertyValue(
+                    '--light-background'
+                );
+                const lightText = getComputedStyle(root).getPropertyValue('--light-text');
+
+                root.style.setProperty(
+                    '--background-color',
+                    darkTheme ? darkBackground : lightBackground
+                );
+                root.style.setProperty('--text-color', darkTheme ? darkText : lightText);
+            })();
+        </script>
+        <label id="switch-label" class="switch" for="night-switch">
+            <span class="night">🌜</span>
+            <span class="day">🌞</span>
+        </label>
+    </body>
+    <script src="./index.js" type="module"></script>
+</html>
