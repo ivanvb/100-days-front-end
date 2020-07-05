@@ -1,0 +1,106 @@
+:root {
+    --dimensions: 350px;
+    --lamp-cord-height: 80px;
+    --lamp-top-height: 20px;
+    --lamp-bulb-height: 20px;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+}
+
+.container {
+    height: var(--dimensions);
+    width: var(--dimensions);
+    background-color: #121212;
+    position: relative;
+}
+
+.lamp {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 90px;
+}
+
+.lamp > .cord {
+    height: var(--lamp-cord-height);
+    width: 8px;
+    background-color: white;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lamp > .top {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    height: var(--lamp-top-height);
+    width: calc(var(--lamp-top-height) * 4);
+    background-color: white;
+    position: absolute;
+    top: calc(0% + calc(var(--lamp-cord-height) - 1px));
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lamp > .bulb {
+    height: var(--lamp-bulb-height);
+    width: calc(var(--lamp-bulb-height) * 2.8);
+    background-color: gray;
+    position: absolute;
+    top: calc(0% + calc(var(--lamp-cord-height) - 1px) + calc(var(--lamp-top-height) - 1px));
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 var(--lamp-bulb-height) var(--lamp-bulb-height);
+    transition: background-color 150ms, box-shadow 150ms;
+}
+
+[type='checkbox'] {
+    display: none;
+}
+
+[type='checkbox'] + label {
+    background-color: beige;
+    height: 30px;
+    width: 15px;
+    position: absolute;
+    top: 65%;
+    left: 75%;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+[type='checkbox'] + label::after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 13px;
+    background-color: #8c8c27;
+    left: 50%;
+    top: 90%;
+    border-radius: 1px;
+    transform: translate(-50%, -70%);
+    transition: transform 150ms linear;
+}
+
+[type='checkbox']:checked + label::after {
+    transform: translate(-50%, -500%);
+}
+
+[type='checkbox']:checked ~ .lamp > .bulb {
+    background-color: yellow;
+    box-shadow: 0px var(--lamp-bulb-height) calc(var(--lamp-bulb-height) * 5)
+        var(--lamp-bulb-height) yellow;
+}
