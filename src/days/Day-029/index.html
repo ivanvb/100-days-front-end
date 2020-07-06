@@ -3,41 +3,37 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>JSless Dark Mode 🌛</title>
         <link href="./reset.css" rel="stylesheet" />
         <link href="./index.css" rel="stylesheet" />
     </head>
     <body>
-        <script>
-            (function () {
-                const root = document.documentElement;
-                const darkMode = window.localStorage.getItem('darkMode');
-                const prefersDarkMode =
-                    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const darkTheme = darkMode !== null ? JSON.parse(darkMode) : prefersDarkMode;
-                if (darkMode === null) {
-                    window.localStorage.setItem('darkMode', prefersDarkMode);
-                }
-
-                const darkBackground = getComputedStyle(root).getPropertyValue('--dark-background');
-                const darkText = getComputedStyle(root).getPropertyValue('--dark-text');
-
-                const lightBackground = getComputedStyle(root).getPropertyValue(
-                    '--light-background'
-                );
-                const lightText = getComputedStyle(root).getPropertyValue('--light-text');
-
-                root.style.setProperty(
-                    '--background-color',
-                    darkTheme ? darkBackground : lightBackground
-                );
-                root.style.setProperty('--text-color', darkTheme ? darkText : lightText);
-            })();
-        </script>
-        <label id="switch-label" class="switch" for="night-switch">
+        <input type="checkbox" id="day-switch" />
+        <label id="switch-label-day" class="switch daily" for="day-switch">
             <span class="night">🌜</span>
             <span class="day">🌞</span>
         </label>
+        <input type="checkbox" id="night-switch" />
+        <label id="switch-label-night" class="switch nightly" for="night-switch">
+            <span class="night">🌜</span>
+            <span class="day">🌞</span>
+        </label>
+        <main>
+            <h1>This Dark Theme Does Not Use Javascript!</h1>
+            <p>
+                <bold>It defaults to the preferred color scheme in your OS</bold> Lorem ipsum dolor
+                sit amet. Culpa enim magna reprehenderit id nulla exercitation. Enim magna amet
+                aliqua voluptate pariatur culpa pariatur pariatur. Id cupidatat consectetur qui
+                aliqua incididunt qui excepteur eu reprehenderit nulla in labore. Anim aliquip velit
+                id eu.
+            </p>
+            <p>
+                Cillum enim deserunt deserunt anim anim aute non proident sunt consectetur
+                reprehenderit. Ad culpa aliquip velit officia duis ipsum id ipsum et excepteur
+                laboris aliquip. Fugiat excepteur exercitation sint aliquip exercitation laborum
+                esse nulla nulla do adipisicing cillum ut dolore. Magna ut dolor ad et ut ex
+                voluptate dolore officia laboris est et.
+            </p>
+        </main>
     </body>
-    <script src="./index.js" type="module"></script>
 </html>
