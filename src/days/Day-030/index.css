@@ -1,0 +1,199 @@
+:root {
+    --base-value: 15px;
+    --incrementer: 10px;
+
+    --base-duration: 2s;
+    --duration-increment: 25ms;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #222222;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    z-index: -1000;
+}
+
+.filter {
+    height: 300px;
+    width: 300px;
+    background: radial-gradient(circle, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, 1) 53%);
+    opacity: 0.75;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 1000;
+}
+
+.filter:hover + .container > * {
+    animation-play-state: paused;
+}
+
+.square {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid lightgray;
+}
+
+.square:nth-of-type(1) {
+    height: var(--base-value);
+    width: var(--base-value);
+    animation: rot var(--base-duration) ease-in-out infinite alternate;
+}
+
+.square:nth-of-type(2) {
+    height: calc(var(--base-value) + var(--incrementer));
+    width: calc(var(--base-value) + var(--incrementer));
+    animation: rot var(--base-duration) ease-in-out infinite alternate var(--duration-increment);
+}
+
+.square:nth-of-type(3) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 2));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 2));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 2);
+}
+
+.square:nth-of-type(4) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 3));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 3));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 3);
+}
+
+.square:nth-of-type(5) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 4));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 4));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 4);
+}
+
+.square:nth-of-type(6) {
+    height: calc(var(--base-value) + var(--incrementer) * 5);
+    width: calc(var(--base-value) + var(--incrementer) * 5);
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 5);
+}
+
+.square:nth-of-type(7) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 6));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 6));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 6);
+}
+
+.square:nth-of-type(8) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 7));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 7));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 7);
+}
+
+.square:nth-of-type(9) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 8));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 8));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 8);
+}
+
+.square:nth-of-type(10) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 9));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 9));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 9);
+}
+
+.square:nth-of-type(11) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 10));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 10));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 10);
+}
+
+.square:nth-of-type(12) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 11));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 11));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 11);
+}
+
+.square:nth-of-type(13) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 12));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 12));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 12);
+}
+
+.square:nth-of-type(14) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 13));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 13));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 13);
+}
+
+.square:nth-of-type(15) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 14));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 14));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 14);
+}
+
+.square:nth-of-type(16) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 15));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 15));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 15);
+}
+
+.square:nth-of-type(17) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 16));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 16));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 16);
+}
+
+.square:nth-of-type(18) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 17));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 17));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 17);
+}
+
+.square:nth-of-type(19) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 18));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 18));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 18);
+}
+
+.square:nth-of-type(20) {
+    height: calc(var(--base-value) + calc(var(--incrementer) * 19));
+    width: calc(var(--base-value) + calc(var(--incrementer) * 19));
+    animation: rot var(--base-duration) ease-in-out infinite alternate
+        calc(var(--duration-increment) * 19);
+}
+
+@keyframes rot {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
