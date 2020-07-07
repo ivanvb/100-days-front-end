@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Random Paint</title>
+        <link href="./reset.css" rel="stylesheet" />
+        <link href="./index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <canvas id="picture"></canvas>
+        </div>
+    </body>
+    <script>
+        let isDrawing = 0;
+
+        function drawBackgroundColor(color, ctx) {
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        const canvas = document.getElementById('picture');
+        const ctx = canvas.getContext('2d');
+        drawBackgroundColor('white', ctx);
+    </script>
+</html>
