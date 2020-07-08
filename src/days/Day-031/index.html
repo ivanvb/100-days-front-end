@@ -3,24 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Random Paint</title>
+        <title>Modern Art Generator 🖼</title>
         <link href="./reset.css" rel="stylesheet" />
         <link href="./index.css" rel="stylesheet" />
     </head>
     <body>
         <div class="container">
-            <canvas id="picture"></canvas>
+            <h1>Modern Art Generator</h1>
+            <h2>Just for 250,000 USD$</h2>
+            <canvas id="picture" width="350" height="350"></canvas>
+            <div class="buttons">
+                <button id="stop">Pause</button>
+                <button id="save">Save</button>
+                <button onclick="location.reload()">New</button>
+            </div>
+            <a id="link" style="display: none;"></a>
         </div>
     </body>
-    <script>
-        let isDrawing = 0;
-
-        function drawBackgroundColor(color, ctx) {
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-        const canvas = document.getElementById('picture');
-        const ctx = canvas.getContext('2d');
-        drawBackgroundColor('white', ctx);
-    </script>
+    <script type="module" src="./index.js"></script>
 </html>
