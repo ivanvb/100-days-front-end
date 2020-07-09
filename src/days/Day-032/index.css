@@ -77,6 +77,10 @@ body {
     transition: transform 250ms;
 }
 
+.plan:focus {
+    outline: none;
+}
+
 .plan > h2 {
     background-color: skyblue;
     padding: 10px 25px;
@@ -124,15 +128,18 @@ body {
     width: 70%;
 }
 
-.plan:hover {
+.plan:hover,
+.plan:focus {
     transform: scale(1.05);
 }
 
-.plan:hover h2 {
+.plan:hover h2,
+.plan:focus h2 {
     background-color: #27a6d2;
 }
 
-.plan:hover .price {
+.plan:hover .price,
+.plan:focus .price {
     color: #27a6d2;
 }
 
@@ -159,42 +166,51 @@ body {
 }
 
 /* basic */
-.plan-basic:hover ~ .details .progress.users::after {
+.plan-basic:hover ~ .details .progress.users::after,
+.plan-basic:focus ~ .details .progress.users::after {
     transform: scaleX(0.24);
 }
 
-.plan-basic:hover ~ .details .progress.space::after {
+.plan-basic:hover ~ .details .progress.space::after,
+.plan-basic:focus ~ .details .progress.space::after {
     transform: scaleX(0.27);
 }
 
-.plan-basic:hover ~ .details .progress.hours::after {
+.plan-basic:hover ~ .details .progress.hours::after,
+.plan-basic:focus ~ .details .progress.hours::after {
     transform: scaleX(0.1);
 }
 
 /* basic */
 
-.plan-pro:hover ~ .details .progress.users::after {
+.plan-pro:hover ~ .details .progress.users::after,
+.plan-pro:focus ~ .details .progress.users::after {
     transform: scaleX(0.56);
 }
 
-.plan-pro:hover ~ .details .progress.space::after {
+.plan-pro:hover ~ .details .progress.space::after,
+.plan-pro:focus ~ .details .progress.space::after {
     transform: scaleX(0.61);
 }
 
-.plan-pro:hover ~ .details .progress.hours::after {
+.plan-pro:hover ~ .details .progress.hours::after,
+.plan-pro:focus ~ .details .progress.hours::after {
     transform: scaleX(0.5);
 }
 
 /* basic */
 
-.plan-premium:hover ~ .details .progress.users::after {
+.plan-premium:hover ~ .details .progress.users::after,
+.plan-premium:focus ~ .details .progress.users::after {
     transform: scaleX(1);
 }
 
-.plan-premium:hover ~ .details .progress.space::after {
+.plan-premium:hover ~ .details .progress.space::after,
+.plan-premium:focus ~ .details .progress.space::after {
     transform: scaleX(1);
 }
 
-.plan-premium:hover ~ .details .progress.hours::after {
+.plan-premium:hover ~ .details .progress.hours::after,
+.plan-premium:focus ~ .details .progress.hours::after {
     transform: scaleX(1);
 }
