@@ -1,0 +1,63 @@
+:root {
+    --height: 60px;
+    --width: 180px;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #2d3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.8rem;
+    padding: 10px 20px;
+    background-color: #00a7dc;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    transition: all 0.3s ease-out;
+    border: none;
+    position: relative;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+button::before {
+    content: attr(hover-text);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: all 0.3s ease out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0965a0;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+}
+
+button:focus::before {
+    outline: 3px solid #0965a099;
+}
+
+button:hover,
+button:focus {
+    transform: rotateX(90deg) translateY(-10px);
+}
