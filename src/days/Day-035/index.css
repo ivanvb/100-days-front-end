@@ -1,8 +1,4 @@
 :root {
-    --check-dims: 40px;
-    --center-percentage: 0.35;
-    --center-dims: calc(var(--check-dims) * var(--center-percentage));
-
     --stalactites-top-scale: 0.6;
     --stalactites-bottom-scale: 0.35;
     --stalactites-fall-time: 3.5s;
@@ -60,7 +56,7 @@ body {
     width: 40%;
     background-color: black;
     left: 50%;
-    position: absolute;
+    position: relative;
     top: 58%;
     transform: translateX(-50%);
     border-radius: 100px 100px 0 0;
