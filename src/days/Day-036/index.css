@@ -1,0 +1,172 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #421725;
+    flex-direction: column;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.3;
+}
+
+.container {
+    height: 200px;
+    width: 300px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ruby {
+    position: relative;
+    height: 115px;
+    width: 175px;
+}
+
+.ruby > .top,
+.ruby > .bottom {
+    position: relative;
+    width: 100%;
+}
+
+.ruby > .top {
+    height: 37.5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.top > .ruby-edge:nth-child(1) {
+    position: absolute;
+    left: 0.5px;
+    clip-path: polygon(58% 0%, 0% 100%, 100% 100%);
+    background-color: #9d0708;
+    height: 37px;
+    width: 51px;
+}
+
+.top > .ruby-edge:nth-child(2) {
+    clip-path: polygon(38% 99%, 0 0, 100% 0);
+    position: absolute;
+    left: 17%;
+    background-color: #db2323;
+    height: 37.5px;
+    width: 56px;
+}
+
+.top > .ruby-edge:nth-child(3) {
+    clip-path: polygon(49% 0, 0 100%, 100% 100%);
+    position: absolute;
+    left: 28%;
+    margin-top: -2px;
+    background-color: #bc0e0f;
+    height: 39px;
+    width: 78px;
+}
+
+.top > .ruby-edge:nth-child(4) {
+    clip-path: polygon(71% 100%, 0 0, 100% 0);
+    position: absolute;
+    left: 50%;
+    background-color: #f58181;
+    height: 37.5px;
+    width: 56px;
+}
+
+.top > .ruby-edge:nth-child(5) {
+    position: absolute;
+    margin-top: -2px;
+    left: 72.5%;
+    clip-path: polygon(100% 100%, 0 100%, 34% 0);
+    background-color: #b90b0c;
+    height: 39px;
+    width: 50px;
+}
+
+.ruby > .bottom {
+    height: 77.5px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -1px;
+    /* border: 1px solid blue; */
+}
+
+.bottom > .ruby-edge:nth-child(1) {
+    position: absolute;
+    left: 0.5px;
+    clip-path: polygon(54% 0, 0 0, 99% 100%);
+    background-color: #890405;
+    height: 77.5px;
+    width: 90px;
+    z-index: 2;
+}
+
+.bottom > .ruby-edge:nth-child(2) {
+    clip-path: polygon(100% 0, 0 0, 50% 76%);
+    position: absolute;
+    left: 27%;
+    background-color: #a51012;
+    height: 101.5px;
+    width: 82px;
+    z-index: 0;
+}
+
+.bottom > .ruby-edge:nth-child(3) {
+    clip-path: polygon(100% 0, 49% 0, 5% 100%);
+    position: absolute;
+    left: 47.5%;
+    margin-top: -2px;
+    background-color: #c71719;
+    height: 77.5px;
+    width: 95px;
+    z-index: 1;
+}
+
+.sparkle {
+    position: absolute;
+    z-index: 100;
+}
+
+.sparkle:nth-of-type(1) {
+    top: 29%;
+    left: 70%;
+    animation: shine 1.2s ease-in-out infinite alternate;
+}
+
+.sparkle:nth-of-type(2) {
+    top: 49%;
+    left: 29%;
+    transform: scale(0.3);
+    opacity: 0;
+    animation: shine 1.2s ease-in-out infinite alternate 1s;
+}
+
+@keyframes shine {
+    from {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
