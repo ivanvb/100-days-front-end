@@ -1,0 +1,132 @@
+:root {
+    --cube-edge: 150px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    flex-direction: column;
+    perspective: 25em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cube {
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    font-size: 1.4rem;
+    animation: rott 16s linear infinite;
+    transform: rotateY(90deg);
+}
+
+[class*='cube'] {
+    position: absolute;
+}
+
+.cube__face {
+    margin: calc(-0.5 * var(--cube-edge));
+    width: var(--cube-edge);
+    height: var(--cube-edge);
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.cube__face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #2b2d42;
+    color: white;
+}
+.cube__face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #8d99ae;
+    color: white;
+}
+.cube__face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #f8f32b;
+}
+.cube__face:nth-child(4) {
+    transform: rotateY(270deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #21d19f;
+    color: white;
+    justify-content: flex-start;
+}
+.cube__face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #111;
+    color: white;
+}
+.cube__face:nth-child(6) {
+    transform: rotateX(270deg) translateZ(calc(0.5 * var(--cube-edge)));
+    background-color: #f24236;
+    color: white;
+}
+
+.image {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image ~ p {
+    margin-top: 5px;
+}
+
+@keyframes rott {
+    0%,
+    10% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    14.29%,
+    24% {
+        transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+    }
+
+    28.58%,
+    38% {
+        transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+    }
+
+    42.87%,
+    53% {
+        transform: rotateX(0deg) rotateY(-270deg) rotateZ(0deg);
+    }
+
+    57.16%,
+    67% {
+        transform: rotateX(0deg) rotateY(-360deg) rotateZ(0deg);
+    }
+
+    71.45%,
+    81% {
+        transform: rotateX(-90deg) rotateY(-360deg) rotateZ(0deg);
+    }
+
+    85.74%,
+    96% {
+        transform: rotateX(90deg) rotateY(-360deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(-360deg) rotateZ(0deg);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+    }
+}
