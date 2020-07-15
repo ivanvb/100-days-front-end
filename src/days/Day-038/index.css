@@ -1,0 +1,153 @@
+:root {
+    --pink: deeppink;
+    --blue: skyblue;
+    --green-sheen: #64b6ac;
+    --yellow: #f3b61f;
+
+    --primary-color: var(--pink);
+    --text-color: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    margin: 2rem 0;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.hero {
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 10rem 0;
+    position: relative;
+}
+
+.hero > h1,
+.hero > h2 {
+    color: var(--text-color);
+}
+
+.hero > aside {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+    padding: 1rem 2rem;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.hero > h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.8rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+aside > h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+aside > p {
+    margin-bottom: 2rem;
+}
+
+.fixed-menu-container {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    right: 100%;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    transition: all 400ms;
+}
+
+.menu {
+    background-color: #333333aa;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.fixed-menu-container:hover {
+    animation: none;
+    transform: translate(100%, -50%);
+}
+
+.fixed-menu-container > .arrow {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #333333aa;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.menu > ul > li {
+    margin: 10px 0;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+#blue {
+    background-color: var(--blue);
+}
+
+#pink {
+    background-color: var(--pink);
+}
+
+#yellow {
+    background-color: var(--yellow);
+}
+
+#green-sheen {
+    background-color: var(--green-sheen);
+}
+
+@media (max-width: 486px) {
+    .hero > aside {
+        width: 75%;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translate(0, -50%);
+    }
+
+    to {
+        transform: translate(-10%, -50%);
+    }
+}
