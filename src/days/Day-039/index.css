@@ -1,0 +1,113 @@
+:root {
+    --cube-face-size: 200px;
+    --inner-cube-percentage: 0.98;
+    --inner-cube-size: calc(var(--cube-face-size) * var(--inner-cube-percentage));
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    perspective: 75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.cube,
+.inner__cube {
+    height: var(--cube-face-size);
+    width: var(--cube-face-size);
+    transform-style: preserve-3d;
+    transform: rotateX(-25deg) rotateY(45deg);
+}
+
+.inner_cube {
+    height: var(--inner-cube-size);
+    width: var(--inner-cube-size);
+    left: 50%;
+    top: 50%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    animation: fill 3s ease-in infinite alternate;
+}
+
+.inner_cube > .inner_cube__face {
+    height: var(--inner-cube-size);
+    width: var(--inner-cube-size);
+    position: absolute;
+    background-color: #66ff66;
+}
+
+.cube > .cube__face {
+    position: absolute;
+    border: 1px solid black;
+    height: var(--cube-face-size);
+    width: var(--cube-face-size);
+    background-color: #87ceeb22;
+}
+
+.cube__face:nth-child(1) {
+    transform: rotateY(0) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+.cube__face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+.cube__face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+.cube__face:nth-child(4) {
+    transform: rotateY(270deg) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+.cube__face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+.cube__face:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(calc(0.5 * var(--cube-face-size)));
+}
+
+/* inner cube face */
+.inner_cube__face:nth-child(1) {
+    transform: rotateY(0) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+.inner_cube__face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+.inner_cube__face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+.inner_cube__face:nth-child(4) {
+    transform: rotateY(270deg) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+.inner_cube__face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+.inner_cube__face:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(calc(0.5 * var(--inner-cube-size)));
+}
+
+@keyframes fill {
+    0% {
+        transform: scale3d(1, 0.01, 1);
+    }
+
+    80%,
+    100% {
+        transform: scale3d(1, 0.95, 1);
+    }
+}
