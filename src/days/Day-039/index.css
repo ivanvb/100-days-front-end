@@ -46,7 +46,7 @@ body {
 
 .cube > .cube__face {
     position: absolute;
-    border: 1px solid black;
+    border: 1px solid #00000044;
     height: var(--cube-face-size);
     width: var(--cube-face-size);
     background-color: #87ceeb22;
