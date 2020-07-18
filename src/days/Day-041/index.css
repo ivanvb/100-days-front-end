@@ -11,11 +11,13 @@ body {
 }
 
 main {
+    width: 120%;
     min-height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    transform: translateX(-10%);
 }
 
 .ball {
