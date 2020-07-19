@@ -1,0 +1,104 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube {
+    width: 8rem;
+    height: 5rem;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.youtube::after {
+    content: '';
+    position: absolute;
+    border: 20px solid transparent;
+    border-left: 28px solid white;
+    top: 50%;
+    left: 45%;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.youtube::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background-color: red;
+    transform: translateX(-100%);
+    animation: load 10s ease-in-out infinite;
+}
+
+@keyframes load {
+    0%,
+    2% {
+        transform: translateX(-100%) scaleX(1);
+    }
+
+    8%,
+    10% {
+        transform: translateX(500%) scaleX(1);
+    }
+
+    18%,
+    20% {
+        transform: translateX(-100%) scaleX(1);
+    }
+
+    28%,
+    30% {
+        transform: translateX(500%) scaleX(1);
+    }
+
+    38%,
+    40% {
+        transform: translateX(200%) scaleX(1);
+    }
+
+    45%,
+    50% {
+        transform: translateX(200%) scaleX(5);
+    }
+
+    55% {
+        transform: translateX(200%) scaleX(1);
+    }
+
+    58%,
+    60% {
+        transform: translateX(-100%) scaleX(1);
+    }
+
+    68%,
+    70% {
+        transform: translateX(500%) scaleX(1);
+    }
+
+    78%,
+    80% {
+        transform: translateX(-100%) scaleX(1);
+    }
+
+    88%,
+    90% {
+        transform: translateX(500%) scaleX(1);
+    }
+
+    98%,
+    100% {
+        transform: translateX(-100%) scaleX(1);
+    }
+}
