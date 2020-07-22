@@ -1,0 +1,142 @@
+:root {
+    --background-color: #333;
+    --ball-bottom-offset: -2%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+
+.scroller {
+    height: 100%;
+    width: 300%;
+    display: flex;
+    transition: transform 500ms;
+}
+
+.item {
+    height: 100%;
+    width: 33.3%;
+}
+
+.item:nth-of-type(1) {
+    background-color: red;
+}
+
+.item:nth-of-type(2) {
+    background-color: green;
+}
+
+.item:nth-of-type(3) {
+    background-color: blue;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 5%;
+}
+
+.control {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+[type='checkbox'] {
+    display: none;
+}
+
+[type='radio'] {
+    display: none;
+}
+
+[type='radio'] + label {
+    cursor: pointer;
+}
+
+label {
+    position: relative;
+    margin: 0 20px;
+}
+
+label::after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.radios {
+    position: relative;
+}
+
+.ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    transform: translateX(100%);
+    top: 0%;
+    left: 0%;
+    transition: all 250ms;
+    transform: translate(105%, var(--ball-bottom-offset));
+}
+
+[type='radio']:checked
+    + label
+    + [type='radio']:not(:checked)
+    + label
+    + [type='radio']:not(:checked)
+    + label
+    + .ball {
+    background-color: green;
+    transform: translate(105%, var(--ball-bottom-offset));
+}
+
+[type='radio']:not(:checked)
+    + label
+    + [type='radio']:checked
+    + label
+    + [type='radio']:not(:checked)
+    + label
+    + .ball {
+    background-color: red;
+    transform: translate(412%, var(--ball-bottom-offset));
+}
+
+[type='radio']:not(:checked)
+    + label
+    + [type='radio']:not(:checked)
+    + label
+    + [type='radio']:checked
+    + label
+    + .ball {
+    background-color: blue;
+    transform: translate(722%, var(--ball-bottom-offset));
+}
