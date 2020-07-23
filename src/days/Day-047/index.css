@@ -1,0 +1,137 @@
+:root {
+    --rotation-speed: 500ms;
+    --background-color: #222;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 350px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    position: relative;
+    height: 75px;
+    width: 220px;
+}
+
+[type='radio'] {
+    display: none;
+}
+
+label {
+    height: 75px;
+    width: 220px;
+    background-color: gainsboro;
+    border: 1px solid black;
+    position: absolute;
+    animation: changeOrder calc(var(--rotation-speed) * 6) linear infinite;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label:nth-of-type(1) {
+    animation-delay: -0;
+}
+
+label:nth-of-type(2) {
+    animation-delay: calc(var(--rotation-speed) * -1);
+}
+
+label:nth-of-type(3) {
+    animation-delay: calc(var(--rotation-speed) * -2);
+}
+
+label:nth-of-type(4) {
+    animation-delay: calc(var(--rotation-speed) * -3);
+}
+
+label:nth-of-type(5) {
+    animation-delay: calc(var(--rotation-speed) * -4);
+}
+
+label:nth-of-type(6) {
+    animation-delay: calc(var(--rotation-speed) * -5);
+}
+
+[type='radio']:checked:nth-of-type(1) ~ .selection {
+    background-color: darkblue;
+}
+
+[type='radio']:checked:nth-of-type(2) ~ .selection {
+    background-color: deeppink;
+}
+
+[type='radio']:checked:nth-of-type(3) ~ .selection {
+    background-color: darkcyan;
+}
+
+[type='radio']:checked:nth-of-type(4) ~ .selection {
+    background-color: darkorchid;
+}
+
+[type='radio']:checked:nth-of-type(5) ~ .selection {
+    background-color: darkred;
+}
+
+[type='radio']:checked:nth-of-type(6) ~ .selection {
+    background-color: goldenrod;
+}
+
+.selection {
+    height: 150px;
+    width: 150px;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes changeOrder {
+    from {
+        z-index: 6;
+    }
+    to {
+        z-index: 1;
+    }
+}
+
+label:active {
+    margin-left: 400%;
+    position: static;
+}
+
+label:active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
