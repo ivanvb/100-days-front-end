@@ -1,0 +1,61 @@
+:root {
+    --rotation-speed: 500ms;
+    --background-color: #222;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    height: 300px;
+    width: 300px;
+}
+
+.color {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.title {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.stats {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.stats > * {
+    margin: 0 10px;
+}
+
+.lives {
+    margin-top: 1rem;
+}
