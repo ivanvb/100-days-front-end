@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Submenus</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="submenu-container">
+                        <a href="#">Language</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#english">English</a>
+                            </li>
+                            <li class="right-submenu-container">
+                                <a href="#spanish">Spanish ▶</a>
+                                <ul class="right-submenu">
+                                    <li>
+                                        <a href="#spanish-mexico">Mexico</a>
+                                    </li>
+                                    <li>
+                                        <a href="#spanish-spain">Spain</a>
+                                    </li>
+                                    <li>
+                                        <a href="#spanish-argentina">Argentina</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#french">French</a>
+                            </li>
+                            <li>
+                                <a href="#german">German</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="language">
+                <p id="spanish">Spanish</p>
+                <p id="english">English</p>
+                <p id="french">French</p>
+                <p id="german">German</p>
+                <p id="spanish-mexico">Spanish (Mexico)</p>
+                <p id="spanish-spain">Spanish (Spain)</p>
+                <p id="spanish-argentina">Spanish (Argentina)</p>
+            </div>
+        </div>
+    </body>
+</html>

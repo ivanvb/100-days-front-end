@@ -1,0 +1,110 @@
+:root {
+    --rotation-speed: 500ms;
+    --background-color: #222;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[type='radio'] {
+    display: none;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    border: 1px solid whitesmoke;
+}
+
+.submenu-container {
+    position: relative;
+}
+
+.submenu {
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 1.2rem;
+    display: none;
+    padding: 10px 10px;
+    width: 80px;
+}
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    border: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.submenu > * {
+    padding: 5px 0;
+    z-index: 8;
+}
+
+.submenu-container:hover > .submenu,
+.subemnu:hover,
+.right-submenu:hover,
+.right-submenu-container:hover > .right-submenu {
+    display: block;
+}
+
+.right-submenu-container {
+    position: relative;
+}
+
+.right-submenu {
+    background-color: whitesmoke;
+    position: absolute;
+    left: calc(100% + 10px + 0.4rem);
+    top: 0.5rem;
+    padding: 10px 10px;
+    display: none;
+    z-index: 10;
+}
+
+.right-submenu::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    border: 0.41rem solid transparent;
+    border-right: 0.41rem solid whitesmoke;
+    top: 0%;
+}
+
+p {
+    display: none;
+}
+
+p:target {
+    display: block;
+}
+
+nav {
+    background-color: lightgreen;
+    padding: 10px 20px;
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
