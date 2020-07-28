@@ -1,0 +1,142 @@
+:root {
+    --right-side: #37c2ed;
+    --left-side: #2baee6;
+    --background: #195cab;
+    --background-top: #144c7f;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    color: #333;
+    background-color: beige;
+    overflow-y: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    counter-reset: heading;
+    perspective: 25rem;
+}
+
+main {
+    max-width: 768px;
+    height: 100%;
+}
+
+textarea {
+    position: absolute;
+    z-index: 2;
+    bottom: 300%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    width: 350px;
+}
+
+.message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.8s 2s;
+}
+
+.appear {
+    opacity: 1;
+}
+
+.send {
+    animation: send 0.5s ease-in-out forwards;
+}
+
+.mailbox {
+    position: relative;
+    height: 45px;
+    width: 75px;
+    background-color: var(--background);
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mailbox::before {
+    content: '';
+    height: 50%;
+    width: 101%;
+    position: absolute;
+    bottom: 99%;
+    left: -1%;
+    background-color: var(--background-top);
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    transition: 1s transform 0.7s;
+    transform-origin: 50% 100%;
+    z-index: 15;
+    transform: rotateX(0deg);
+}
+
+.close::before {
+    transform: rotateX(180deg);
+}
+
+.bottom-left {
+    position: absolute;
+    left: -1%;
+    top: -1%;
+    height: 102%;
+    width: 101%;
+    background: var(--left-side);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    z-index: 10;
+}
+
+.bottom-right {
+    position: absolute;
+    left: -1%;
+    top: -1%;
+    height: 102%;
+    width: 101%;
+    background: var(--right-side);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    z-index: 5;
+}
+
+.sendToMailbox {
+    animation: sendToMailbox 1.5s ease-in-out forwards 1.5s;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    padding: 7px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 0 #000000;
+}
+
+@keyframes send {
+    from {
+        transform: translateX(-50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, 95%) scale(0.1, 0.15);
+    }
+}
+
+@keyframes sendToMailbox {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-8000%);
+    }
+}
