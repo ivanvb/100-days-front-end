@@ -133,10 +133,10 @@ button {
 
 @keyframes sendToMailbox {
     from {
-        transform: translateY(0%);
+        transform: translate(-50%, 0%);
     }
 
     to {
-        transform: translateY(-8000%);
+        transform: translate(-50%, -8000%);
     }
 }
