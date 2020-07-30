@@ -1,0 +1,103 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 2% 0;
+}
+
+.container {
+    max-width: 768px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.card {
+    width: 60%;
+    height: 200px;
+    margin: 10px auto;
+    display: flex;
+}
+
+.image {
+    width: 40%;
+    height: 100%;
+    background-color: darkgray;
+    border-radius: 8px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.content {
+    margin-left: 10px;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    height: 12%;
+    background-color: darkgray;
+    margin: 0 0 1% 0;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.title::before,
+.paragraph::before,
+.image::before {
+    content: '';
+    width: 80%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(53, 60, 66, 0) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(53, 60, 66, 0) 100%
+    );
+    border-radius: 8px;
+    transform: translateX(-100%);
+    animation: move 1750ms linear infinite;
+}
+
+.paragraph {
+    flex-grow: 1;
+    width: 100%;
+    background-color: darkgray;
+    border-radius: 8px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(620%);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    h1 {
+        margin: 5% 0;
+    }
+}
