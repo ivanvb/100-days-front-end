@@ -1,0 +1,86 @@
+:root {
+    --circle-color-active: #dbab09;
+    --circle-color-inactive: #7c6c21;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+}
+
+.inner-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: var(--circle-color-active);
+    animation: pulse 1s linear infinite alternate;
+}
+
+.inactive-circle,
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    animation: spin 1s linear infinite;
+}
+
+.inactive {
+    r: 12px;
+    cx: 50%;
+    cy: 50%;
+    stroke: var(--circle-color-inactive);
+    stroke-width: 3;
+    fill: transparent;
+}
+
+.loader > circle {
+    r: 12px;
+    cx: 50%;
+    cy: 50%;
+    stroke: var(--circle-color-active);
+    stroke-width: 3;
+    fill: transparent;
+    stroke-dasharray: 10 200;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
