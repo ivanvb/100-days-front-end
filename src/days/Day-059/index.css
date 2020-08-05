@@ -1,0 +1,134 @@
+:root {
+    --orbitate-duration: 2.8s;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #222;
+    perspective: 25rem;
+}
+
+.container {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(2);
+}
+
+.js {
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    object-position: bottom right;
+}
+
+.satellite {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    border-radius: 100%;
+    background-color: #4d4d4d;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+.react {
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    animation: orbite-middle var(--orbitate-duration) linear infinite;
+}
+
+@keyframes orbite-middle {
+    0%,
+    100% {
+        transform: translate(-100%, -50%) scale(1);
+        z-index: 1;
+    }
+
+    45% {
+        transform: translate(450%, -50%) scale(1);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translate(500%, -50%) scale(0.75);
+        z-index: -1;
+    }
+
+    95% {
+        transform: translate(-50%, -50%) scale(0.75);
+        z-index: -1;
+    }
+}
+
+.vue {
+    top: 0%;
+    left: 0%;
+    animation: orbite-diagonal var(--orbitate-duration) linear infinite
+        calc(var(--orbitate-duration) / 3 * -1);
+}
+
+@keyframes orbite-diagonal {
+    0%,
+    100% {
+        transform: translate(0%, 0%) scale(1);
+        z-index: 1;
+    }
+
+    45% {
+        transform: translate(400%, 400%) scale(1);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translate(450%, 450%) scale(0.75);
+        z-index: -1;
+    }
+
+    95% {
+        transform: translate(-50%, -50%) scale(0.75);
+        z-index: -1;
+    }
+}
+
+.angular {
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+    animation: orbite-diagonal-reverse var(--orbitate-duration) linear infinite
+        calc(var(--orbitate-duration) / 3 * 2 * -1);
+}
+
+@keyframes orbite-diagonal-reverse {
+    0%,
+    100% {
+        transform: translate(-100%, 0%) scale(1);
+        z-index: 1;
+    }
+
+    45% {
+        transform: translate(-500%, 400%) scale(1);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translate(-550%, 450%) scale(0.75);
+        z-index: -1;
+    }
+
+    95% {
+        transform: translate(-50%, 0%) scale(0.75);
+        z-index: -1;
+    }
+}
