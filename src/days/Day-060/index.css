@@ -1,0 +1,44 @@
+:root {
+    --orbitate-duration: 2.8s;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightseagreen;
+    perspective: 25rem;
+}
+
+.board {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    border: 1px solid aliceblue;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.row:nth-of-type(2n + 1) > .cell:nth-of-type(2n + 1),
+.row:nth-of-type(2n) > .cell:nth-of-type(2n) {
+    background-color: aliceblue;
+}
+
+.piece {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
