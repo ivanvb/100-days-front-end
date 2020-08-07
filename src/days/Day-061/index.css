@@ -1,0 +1,213 @@
+:root {
+    --orbitate-duration: 2.8s;
+
+    --size: 150px;
+
+    --dot-size: calc(var(--size) * 0.15);
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #222;
+    perspective: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.stop {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 2px;
+    border: none;
+}
+
+.dice {
+    height: var(--size);
+    width: var(--size);
+    position: relative;
+    transform: rotateX(90deg);
+    transform-style: preserve-3d;
+    animation: rotate 1s linear infinite;
+}
+
+.p1 {
+    animation: one 300ms linear forwards;
+}
+
+.p2 {
+    animation: two 300ms linear forwards;
+}
+
+.p3 {
+    animation: three 300ms linear forwards;
+}
+
+.p4 {
+    animation: four 300ms linear forwards;
+}
+
+.p5 {
+    animation: five 300ms linear forwards;
+}
+
+.p6 {
+    animation: six 300ms linear forwards;
+}
+
+.dice__face {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #00000055;
+    position: absolute;
+    background-color: white;
+}
+
+.dice__face:nth-of-type(1) {
+    transform: rotateY(0deg) translateZ(calc(var(--size) / 2));
+}
+
+.dice__face:nth-of-type(2) {
+    transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dice__face:nth-of-type(3) {
+    transform: rotateY(180deg) translateZ(calc(var(--size) / 2));
+}
+
+.dice__face:nth-of-type(4) {
+    transform: rotateY(270deg) translateZ(calc(var(--size) / 2));
+}
+
+.dice__face:nth-of-type(5) {
+    transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+}
+
+.dice__face:nth-of-type(6) {
+    transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
+}
+
+.row {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    align-items: center;
+}
+
+.dice__face:nth-of-type(1) > .row:nth-of-type(2) {
+    justify-content: center;
+}
+
+.dice__face:nth-of-type(2) > .row:nth-of-type(3) {
+    justify-content: flex-end;
+}
+
+.dice__face:nth-of-type(3) > .row:nth-of-type(2) {
+    justify-content: center;
+}
+
+.dice__face:nth-of-type(3) > .row:nth-of-type(3) {
+    justify-content: flex-end;
+}
+
+.dice__face:nth-of-type(4) > .row:nth-of-type(1),
+.dice__face:nth-of-type(4) > .row:nth-of-type(3) {
+    justify-content: space-between;
+}
+
+.dice__face:nth-of-type(5) > .row:nth-of-type(1),
+.dice__face:nth-of-type(5) > .row:nth-of-type(3) {
+    justify-content: space-between;
+}
+
+.dice__face:nth-of-type(5) > .row:nth-of-type(2) {
+    justify-content: center;
+}
+
+.dice__face:nth-of-type(6) > .row:nth-of-type(1),
+.dice__face:nth-of-type(6) > .row:nth-of-type(2),
+.dice__face:nth-of-type(6) > .row:nth-of-type(3) {
+    justify-content: space-between;
+}
+
+.dot {
+    height: var(--dot-size);
+    width: var(--dot-size);
+    background-color: #8c0202;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 10px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0) rotateY(120deg) rotateZ(0);
+    }
+
+    to {
+        transform: rotateX(1120deg) rotateY(1120deg) rotateZ(720deg);
+    }
+}
+
+@keyframes one {
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+@keyframes two {
+    to {
+        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+    }
+}
+
+@keyframes three {
+    to {
+        transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
+}
+
+@keyframes four {
+    to {
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+    }
+}
+
+@keyframes five {
+    to {
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+@keyframes six {
+    to {
+        transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
