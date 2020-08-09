@@ -1,0 +1,115 @@
+:root {
+    --battery-height: 50px;
+    --battery-width: calc(var(--battery-height) / 2);
+
+    --charge-triangle-height: 15px;
+    --charge-triangle-width: calc(var(--charge-triangle-height) / 2);
+
+    --battery-fill-color: #34a853;
+
+    --animation-duration: 750ms;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #222;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.battery {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: var(--battery-height);
+    width: var(--battery-width);
+    border-radius: 3px;
+    background-color: black;
+    overflow: h;
+}
+
+.battery::before,
+.battery::after {
+    content: '';
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -99%);
+    height: 3px;
+    width: 10px;
+    position: absolute;
+    background-color: black;
+}
+
+.battery::after {
+    z-index: 1;
+    background-color: var(--battery-fill-color);
+    animation: fill-top 100ms linear forwards calc(var(--animation-duration) * 0.8);
+    transform: scaleY(0) translate(-50%, -99%);
+}
+
+@keyframes fill-top {
+    from {
+        transform: scaleY(0) translate(-50%, -99%);
+    }
+
+    to {
+        transform: scaleY(1) translate(-50%, -99%);
+    }
+}
+
+.fill {
+    position: absolute;
+    z-index: -1;
+    background-color: var(--battery-fill-color);
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    border-radius: 3px;
+    animation: charge var(--animation-duration) linear forwards;
+    transform-origin: 50% 100%;
+}
+
+@keyframes charge {
+    0% {
+        transform: scaleY(0);
+    }
+
+    80%,
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.charge {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(var(--charge-triangle-height) * 1.8);
+    width: calc(var(--charge-triangle-width) * 1.5);
+}
+
+.triangle {
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    background-color: white;
+    height: var(--charge-triangle-height);
+    width: var(--charge-triangle-width);
+    position: absolute;
+}
+
+.triangle:nth-of-type(2) {
+    transform: rotate(180deg) translateY(-80%) translateX(-50%);
+}
