@@ -1,0 +1,111 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.slide > h1 {
+    font-size: 6.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    z-index: 10;
+}
+
+.carousel {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.container {
+    display: flex;
+    transition: transform 750ms;
+}
+
+.slide {
+    height: 550px;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slide > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.bars {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    width: 33.3%;
+    height: 100%;
+    justify-content: baseline;
+    padding-top: 15px;
+    box-sizing: border-box;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.bar::before {
+    content: '';
+    width: 100%;
+    background-color: #ec9600;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+}
+
+.active > .bar::before {
+    transition: transform 1500ms linear;
+    transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+    .slide {
+        height: 300px;
+    }
+
+    .item {
+        visibility: hidden;
+        position: absolute;
+        width: 90%;
+    }
+
+    .item.active {
+        visibility: visible;
+    }
+
+    .slide > h1 {
+        font-size: 4rem;
+    }
+}
