@@ -116,3 +116,9 @@ span:nth-of-type(14) {
         color: purple;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+}
