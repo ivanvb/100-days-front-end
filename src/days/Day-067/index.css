@@ -1,0 +1,45 @@
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: rgb(237, 113, 56);
+    background: -moz-linear-gradient(0deg, rgba(237, 113, 56, 1) 0%, rgba(251, 244, 43, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(237, 113, 56, 1) 0%, rgba(251, 244, 43, 1) 100%);
+    background: linear-gradient(0deg, rgba(237, 113, 56, 1) 0%, rgba(251, 244, 43, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed7138",endColorstr="#fbf42b",GradientType=1);
+}
+
+.loader {
+    height: 125px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 100%;
+    overflow: hidden;
+    animation: rotate 5s linear infinite alternate;
+}
+
+.bar {
+    height: 100%;
+    width: 2px;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(3600deg);
+    }
+}
