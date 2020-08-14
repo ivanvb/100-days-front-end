@@ -1,0 +1,104 @@
+:root {
+    --container-width: 350px;
+
+    --ball-color: #531cb3;
+    --ball-light-color: #aa7bc3;
+
+    --animation-duration: 1500ms;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #333;
+}
+
+.container {
+    height: 200px;
+    width: var(--container-width);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 0 0 0px 5px white;
+}
+
+.ball {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: var(--ball-color);
+    bottom: 0;
+    position: absolute;
+    transform-origin: 50% 100%;
+    transform: translateX(200%);
+    z-index: 10;
+    animation: move var(--animation-duration) ease-in-out infinite alternate;
+}
+
+.ball::before {
+    content: '';
+    height: 5px;
+    width: calc(var(--container-width) * 2);
+    background-color: var(--ball-color);
+    right: 55%;
+    bottom: 0;
+    position: absolute;
+    z-index: -10;
+    animation: counter-scale var(--animation-duration) ease-in-out infinite alternate;
+}
+
+.circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: rotate var(--animation-duration) ease-in-out infinite alternate;
+}
+
+.circle > circle {
+    r: 40px;
+    cx: 50;
+    cy: 50;
+    stroke: var(--ball-light-color);
+    stroke-width: 4;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 50 1000;
+}
+
+@keyframes move {
+    0%,
+    10% {
+        transform: translateX(-100%) scale(1);
+    }
+
+    90%,
+    100% {
+        transform: translateX(250%) scale(0.6);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes counter-scale {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(1.4);
+    }
+}
