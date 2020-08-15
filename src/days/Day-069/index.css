@@ -1,0 +1,60 @@
+:root {
+    --bar-width: 250px;
+
+    --stripe-first-color: #c3dafe;
+    --stripe-second-color: #667eea;
+    --stripe-third-color: #3c366b;
+
+    --stripe-width: 10px;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #333;
+}
+
+.bar {
+    height: 15px;
+    width: var(--bar-width);
+    border-radius: 5px;
+    background-color: transparent;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--stripe-first-color),
+        var(--stripe-first-color) var(--stripe-width),
+        var(--stripe-second-color) var(--stripe-width),
+        var(--stripe-second-color) calc(var(--stripe-width) * 2)
+    );
+    border-radius: 5px;
+    transform: translateX(-50%);
+    animation: load 1.7s linear infinite;
+}
+
+@keyframes load {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
