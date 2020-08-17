@@ -1,7 +1,9 @@
 const button = document.getElementById('notifyButton');
 
 button.addEventListener('click', async () => {
-    if (Notification.permission === 'granted') {
+    if (!('Notification' in window)) {
+        alert('Your browser does not support web notifications 😞');
+    } else if (Notification.permission === 'granted') {
         sendNotification();
     } else {
         const permission = await Notification.requestPermission();
