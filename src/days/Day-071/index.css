@@ -1,0 +1,30 @@
+:root {
+    --bg-color: #c3dafe;
+    --button-bg: #667eea;
+    --button-border: #3c366b;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#notifyButton {
+    background-color: var(--button-bg);
+    border: 0px;
+    border-bottom: 3px solid var(--button-border);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    letter-spacing: 0.065rem;
+    cursor: pointer;
+}
