@@ -1,0 +1,132 @@
+:root {
+    --blue: #4fc0ff;
+    --pink: #ffa6ff;
+    --red: #fb6e95;
+    --orange: #ebb173;
+    --yellow: #ffe388;
+    --green: #6ff7c8;
+    --purple: #d38bff;
+
+    --bg-color: #111;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neon-circle {
+    background: rgb(33, 43, 103);
+    background: -moz-linear-gradient(180deg, rgba(33, 43, 103, 1) 0%, rgba(91, 18, 123, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(33, 43, 103, 1) 0%, rgba(91, 18, 123, 1) 100%);
+    background: linear-gradient(180deg, rgba(33, 43, 103, 1) 0%, rgba(91, 18, 123, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#212b67",endColorstr="#5b127b",GradientType=1);
+
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    animation: levitate 10s ease infinite alternate;
+}
+
+.neon-circle > .line {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+}
+
+.neon-circle > .line:nth-of-type(2n) {
+    animation: unstable 10s ease-in-out infinite alternate;
+}
+
+.glow {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: transparent;
+    box-shadow: 10px 10px 200px 50px #72169b44, -10px -10px 200px 50px #2a368344;
+    animation: levitate 10s ease infinite alternate, glow 5s ease infinite alternate;
+}
+
+.neon-circle > *:nth-of-type(2n + 1) {
+    animation: unstable 10s ease-in-out infinite alternate -7.5s;
+}
+
+.green {
+    background-color: var(--green);
+    box-shadow: 0 0 15px #b6fbe3;
+}
+
+.blue {
+    background-color: var(--blue);
+    box-shadow: 0 0 15px #a6dfff;
+}
+
+.red {
+    background-color: var(--red);
+    box-shadow: 0 0 15px #fdb6c9;
+}
+
+.yellow {
+    background-color: var(--yellow);
+    box-shadow: 0 0 15px #fff1c3;
+}
+
+.pink {
+    background-color: var(--pink);
+    box-shadow: 0 0 15px #fed2fe;
+}
+
+.orange {
+    background-color: var(--orange);
+    box-shadow: 0 0 15px #f4d8b9;
+}
+
+@keyframes unstable {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes levitate {
+    0%,
+    100% {
+        transform: translateY(0%);
+    }
+
+    33% {
+        transform: translateY(10%);
+    }
+
+    66% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 10px 10px 200px 50px #72169b44, -10px -10px 200px 50px #2a368344;
+    }
+
+    to {
+        box-shadow: 10px 10px 125px 25px #72169b44, -10px -10px 125px 25px #2a368344;
+    }
+}
