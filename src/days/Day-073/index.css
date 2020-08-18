@@ -1,0 +1,154 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden;
+}
+
+main {
+    width: 120%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transform: translateX(-10%);
+}
+
+.ball {
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    animation: scal 1.5s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+/* 3n */
+
+.ball:nth-of-type(3n + 1) {
+    background-color: yellowgreen;
+    transform: scale(1.2);
+}
+
+.ball:nth-of-type(3n + 2) {
+    background-color: lime;
+    transform: scale(1.3);
+}
+
+.ball:nth-of-type(3n + 3) {
+    background-color: lime;
+    transform: scale(0.8);
+}
+
+.ball:nth-of-type(3n + 4) {
+    background-color: lime;
+    transform: scale(2.3);
+}
+/* 5n */
+.ball:nth-of-type(5n + 1) {
+    background-color: deeppink;
+    animation-delay: -250ms;
+}
+
+.ball:nth-of-type(5n + 2) {
+    background-color: deepskyblue;
+    animation-delay: -500ms;
+}
+
+.ball:nth-of-type(5n + 3) {
+    background-color: chocolate;
+    animation-delay: -750ms;
+}
+
+.ball:nth-of-type(5n + 4) {
+    background-color: brown;
+    animation-delay: -1000ms;
+}
+
+.ball:nth-of-type(7n + 1) {
+    background-color: blue;
+    animation-delay: -1250ms;
+}
+
+.ball:nth-of-type(7n + 2) {
+    background-color: red;
+    animation-delay: -1500ms;
+}
+
+.ball:nth-of-type(7n + 3) {
+    background-color: green;
+    animation-delay: -1750ms;
+}
+.ball:nth-of-type(7n + 4) {
+    background-color: yellow;
+    animation-duration: 1.75s;
+}
+
+.ball:nth-of-type(11n + 1) {
+    background-color: sandybrown;
+    animation-duration: 2s;
+}
+
+.ball:nth-of-type(11n + 2) {
+    background-color: sienna;
+    animation-duration: 2.25s;
+}
+
+.ball:nth-of-type(11n + 3) {
+    background-color: rebeccapurple;
+    animation-duration: 2.5s;
+}
+.ball:nth-of-type(11n + 4) {
+    background-color: chartreuse;
+    animation-duration: 1.25s;
+}
+
+.ball:nth-of-type(13n + 1) {
+    background-color: rosybrown;
+    animation-duration: 1s;
+}
+
+.ball:nth-of-type(13n + 2) {
+    background-color: royalblue;
+    animation-duration: 0.75s;
+}
+
+.ball:nth-of-type(13n + 3) {
+    background-color: silver;
+}
+.ball:nth-of-type(13n + 4) {
+    background-color: tomato;
+}
+
+.ball:nth-of-type(17n + 1) {
+    background-color: black;
+}
+
+.ball:nth-of-type(17n + 2) {
+    background-color: paleturquoise;
+}
+
+.ball:nth-of-type(17n + 3) {
+    background-color: blanchedalmond;
+}
+.ball:nth-of-type(17n + 4) {
+    background-color: white;
+}
+
+.bar {
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    bottom: 0px;
+}
+
+@keyframes scal {
+    to {
+        transform: scale(1.5);
+    }
+}
