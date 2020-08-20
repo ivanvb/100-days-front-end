@@ -1,0 +1,87 @@
+:root {
+    --duration: 5s;
+
+    --bg-color: #222;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    height: 2px;
+    animation: load var(--duration) linear forwards;
+    transform-origin: 0 0;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text::after {
+    content: 'Loading';
+    position: absolute;
+    width: 200px;
+    left: 0%;
+    top: 0%;
+    color: white;
+    animation: textChange var(--duration) linear forwards;
+    font-size: 1.8rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes load {
+    0%,
+    5% {
+        transform: scaleX(0);
+    }
+
+    15%,
+    32% {
+        transform: scaleX(0.2);
+    }
+
+    38%,
+    59% {
+        transform: scaleX(0.6);
+    }
+
+    77%,
+    92% {
+        transform: scaleX(0.85);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes textChange {
+    0%,
+    99% {
+        content: 'Loading. . .';
+    }
+
+    100% {
+        content: 'Loaded! 🎄';
+    }
+}
