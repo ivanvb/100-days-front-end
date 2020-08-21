@@ -2,7 +2,7 @@
 
 I will build a mini website in plain HTML, CSS and Javascript for 100 days. Each day's website will be different.
 
-You can check my progress [here](https://ivb98.github.io/100-days-front-end/)
+You can check my progress [here](https://ivanvb.github.io/100-days-front-end/)
 
 ## Why?
 
@@ -14,7 +14,7 @@ Also, as these libraries have default stylings if at some point I need to add so
 
 For the duration of this project I will build a mini project using only HTML, CSS and Javascript. This means that I will not be using any type of CSS nor Javascript library.
 
-The only exception to this happens in the build process, where I will use my own build scripts to dynamically add each day's project to the [Homescreen](https://ivb98.github.io/100-days-front-end/), for this I may also install some external libraries if needed as this has nothing to do with front end development.
+The only exception to this happens in the build process, where I will use my own build scripts to dynamically add each day's project to the [Homescreen](https://ivanvb.github.io/100-days-front-end/), for this I may also install some external libraries if needed as this has nothing to do with front end development.
 
 Also, I may use some tools such as [Babel](https://babeljs.io/) or [PostCSS](https://postcss.org/) to add compatibility with older browsers.
 

@@ -8,6 +8,12 @@ body {
     overflow-x: hidden;
 }
 
+header,
+nav,
+ul {
+    width: 100%;
+}
+
 .navigation {
     display: flex;
     width: 100%;
@@ -62,6 +68,13 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 40px 30px;
+}
+
+@media (max-width: 768px) {
+    .dog {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 .dog > .content {
