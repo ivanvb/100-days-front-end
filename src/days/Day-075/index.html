@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File Downloader</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <h1>Create and Download your own file!</h1>
+        <form id="downloadForm">
+            <input placeholder="Filename e.g file.txt" id="filename" class="form-field" required />
+            <textarea
+                placeholder="Content"
+                rows="6"
+                id="file-content"
+                class="form-field"
+                required
+            ></textarea>
+            <button>Download</button>
+        </form>
+        <script src="./index.js"></script>
+    </body>
+</html>
