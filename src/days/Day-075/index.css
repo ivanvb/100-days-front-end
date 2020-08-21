@@ -50,6 +50,7 @@ button {
     border-radius: 5px;
     border: none;
     border-bottom: 3px solid skyblue;
+    background-color: white;
     cursor: pointer;
 }
 
