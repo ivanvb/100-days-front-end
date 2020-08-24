@@ -1,0 +1,171 @@
+:root {
+    --bg-color: #333;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    touch-action: manipulation;
+}
+
+.menu {
+    display: flex;
+    justify-content: start;
+    width: 375px;
+}
+
+.menu > .buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #c4c4c4;
+    margin: 0;
+}
+
+.buttons > button:nth-of-type(2) {
+    border-top: none;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(7, 35px);
+}
+
+.color {
+    box-sizing: border-box;
+}
+
+[color='black'] {
+    background-color: black;
+}
+
+[color='red'] {
+    background-color: red;
+}
+
+[color='brown'] {
+    background-color: brown;
+}
+
+[color='green'] {
+    background-color: green;
+}
+
+[color='lime'] {
+    background-color: lime;
+}
+
+[color='yellow'] {
+    background-color: yellow;
+}
+
+[color='orange'] {
+    background-color: orange;
+}
+
+[color='blue'] {
+    background-color: blue;
+}
+
+[color='light-blue'] {
+    background-color: lightblue;
+}
+
+[color='cyan'] {
+    background-color: cyan;
+}
+
+[color='magenta'] {
+    background-color: magenta;
+}
+
+[color='pink'] {
+    background-color: pink;
+}
+
+[color='gray'] {
+    background-color: gray;
+}
+
+[color='cyan'] {
+    background-color: cyan;
+}
+
+[color='purple'] {
+    background-color: purple;
+}
+
+.selected {
+    border: 1px solid hotpink;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(2, 33px);
+    grid-template-rows: repeat(2, 36.5px);
+}
+
+.tools > * {
+    position: relative;
+}
+
+.tools > * > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.eraser {
+    height: 20px;
+    width: 20px;
+}
+.dot {
+    background-color: black;
+    border-radius: 100%;
+}
+.pointer.small > .dot {
+    height: 5px;
+    width: 5px;
+}
+
+.pointer.medium > .dot {
+    height: 8px;
+    width: 8px;
+}
+
+.pointer.large > .dot {
+    height: 12px;
+    width: 12px;
+}
+
+.selected-pointer {
+    border: 1px solid gold;
+}
+
+#save {
+    margin-top: 10px;
+}
+
+canvas {
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACAklEQVRYR+2WPU/bUBSGX1MpYWkLgg0sAxIMnhJnhQE6pEGyk/6EJH8hH4yM5OMvJPkJJLZE8NB2aNc4mTyABFy53UDQZiGRIOhGpCoRReVeyUTievaRHz3nnPdYwoQ/0oTzQQDydkgYFAZ5DfDWixkUBnkN8Na/mhmcA5AFcH1vbBpAGcD5JBjcB7Agy3IgEol0B4PBwHGcd57n9QH8BPCJB5K3xV8VRZlpNptL/X7/TavVekthNE3rBoPB21gsdkYIuQSwyQrJA7ivKMqybdtzxWJxsVqtPmBIJpPI5/M/otHoOSHkjNUkK+A8gAPXdddKpdL7Wq32qKBUKoVMJnOlquoxgBiAi+eaZAXck2X5o2maK+FweNjWfz2dTqer6/qJ53mHAHb8AtyNx+NbhmFspNPpJ79ZqVRgWdb3er3+GcCub4CJROKDruvr/wNomua3RqPxxU/AYYsty1oJhUJPtrjdbncNw/C9xTSYm67rrpbL5ZnxDR61kW5yNpv9parqEYBtluBmXRLKQGNmybbt+UKhsDi+yXSDc7kcjZkLQsip3zEzkkSDepYGda/Xm3IcZ9huelECgcDNfVBfvVRQjyD/nDpN035LkiTRizIpp24ESYM7M/azUGIJ5vEY4pnB50Ya0/sCkEnbX0XCoDDIa4C3XsygMMhrgLdezCCvwTtQvKwpxWgNbQAAAABJRU5ErkJggg==')
+            20 20,
+        default;
+}
