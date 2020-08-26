@@ -1,0 +1,48 @@
+:root {
+    --grow-size: 2;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS", "Comic Sans", 'Arial';
+}
+
+h1{
+    font-size: 4rem;
+    background: linear-gradient(to left, red, orange, yellow, green, blue, purple);
+    width: 100%;
+    text-align: center;
+    animation: glow 7s ease infinite;
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 0.8rem;
+}
+
+
+@keyframes glow {
+    0%{
+        background-position:0% 50%
+    }
+    50%{
+        background-position:100% 50%
+    }
+    100%{
+        background-position:0% 50%
+    }
+}
+
+@media (max-width: 768px){
+    h1{
+        font-size: 2.8rem;
+    }
+}
