@@ -1,0 +1,70 @@
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+aside{
+    background-color: rebeccapurple;
+    min-width: 20%;
+}
+
+nav{
+    padding: 10px;
+}
+
+nav > ul{
+    display: flex;
+    flex-direction: column;
+    width:  100%;
+    justify-content: space-around;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.bar{
+    width: 3px;
+    height: 20%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    transition: transform 200ms;
+    transform-origin: 0 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+
+}
+
+a:hover{
+    background-color: rgb(54, 24, 83);
+}
+
+main{
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+p{
+    line-height: 1.4rem;
+    margin-bottom: 1.4rem;
+}
