@@ -1,0 +1,59 @@
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.square {
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+    position: relative;
+    overflow: hidden;
+}
+
+.square::after {
+    content: '';
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-color: orange;
+    left: 50%;
+    top: 50%;
+    transform: translate(45%, -50%);
+    box-shadow: 0 0 100px 100px orange;
+    transform-origin: -75% 50%;
+    animation: rotate 4000ms linear infinite;
+}
+
+.content {
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(45%, -50%) rotate(0);
+    }
+
+    to {
+        transform: translate(45%, -50%) rotate(360deg);
+    }
+}
