@@ -1,0 +1,70 @@
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #333;
+}
+
+.social-block {
+    display: flex;
+    width: 350px;
+    justify-content: space-around;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    width: 120px;
+    cursor: pointer;
+}
+
+div.account {
+    position: relative;
+    left: 0;
+    height: 10px;
+    width: 120px;
+}
+
+div.account::after {
+    content: attr(handle);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.social:hover > .account::after {
+    content: attr(action);
+    animation: appear 350ms ease-in-out forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
