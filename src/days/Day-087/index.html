@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rotation Controls</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div class="cube">
+            <div class="cube-face--front">
+                <canvas height="200" width="200" id="canvas-front"></canvas>
+            </div>
+            <div class="cube-face--front">
+                <canvas height="200" width="200" id="canvas-left"></canvas>
+            </div>
+            <div class="cube-face--right">
+                <canvas height="200" width="200" id="canvas-right"></canvas>
+            </div>
+            <div class="cube-face--back">
+                <canvas height="200" width="200" id="canvas-back"></canvas>
+            </div>
+            <div class="cube-face--up">
+                <canvas height="200" width="200" id="canvas-top"></canvas>
+            </div>
+            <div class="cube-face--down">
+                <canvas height="200" width="200" id="canvas-bottom"></canvas>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="cube-movement">
+                <h2 class="button-set-title">Cube Movement</h2>
+                <button class="cube-up">🔼</button>
+                <div class="button-row">
+                    <button class="cube-left">◀</button>
+                    <button class="cube-down">🔽</button>
+                    <button class="cube-right">▶</button>
+                </div>
+            </div>
+        </div>
+        <script src="cubeControls.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
