@@ -1,0 +1,109 @@
+:root {
+    --rotation: 0deg;
+    --translateX: 0px;
+    --translateY: 0px;
+
+    --distance: 300px;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Comic Sans MS', 'Comic Sans', 'Arial';
+}
+
+.container {
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: white;
+    transform-origin: 0 0;
+}
+
+.line:nth-of-type(1) {
+    --rotation: 0deg;
+    --translateX: var(--distance);
+    --translateY: 0px;
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(2) {
+    --rotation: 45deg;
+    --translateX: calc(var(--distance) / 2);
+    --translateY: calc(var(--distance) / 2);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(3) {
+    --rotation: 90deg;
+    --translateX: 0px;
+    --translateY: var(--distance);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(4) {
+    --rotation: 135deg;
+    --translateX: calc(calc(var(--distance) / 2) * -1);
+    --translateY: calc(var(--distance) / 2);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(5) {
+    --rotation: 180deg;
+    --translateX: calc(var(--distance) * -1);
+    --translateY: 0px;
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(6) {
+    --rotation: 225deg;
+    --translateX: calc(calc(var(--distance) / 2) * -1);
+    --translateY: calc(calc(var(--distance) / 2) * -1);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(7) {
+    --rotation: 270deg;
+    --translateX: 0px;
+    --translateY: calc(var(--distance) * -1);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+.line:nth-of-type(8) {
+    --rotation: 315deg;
+    --translateX: calc(var(--distance) / 2);
+    --translateY: calc(calc(var(--distance) / 2) * -1);
+    transform: rotate(var(--rotation));
+    animation: expand 350ms ease-in-out infinite;
+}
+
+@keyframes expand {
+    from {
+        transform: translateX(0) rotate(var(--rotation));
+    }
+
+    to {
+        transform: translateX(var(--translateX)) translateY(var(--translateY))
+            rotate(var(--rotation));
+    }
+}
