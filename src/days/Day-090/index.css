@@ -1,0 +1,70 @@
+:root {
+    --clock-diameter: 300px;
+}
+
+body {
+    background-color: darkslateblue;
+}
+
+.absolute-center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.clock {
+    height: var(--clock-diameter);
+    width: var(--clock-diameter);
+    border-radius: var(--clock-diameter);
+    border: 8px solid white;
+    display: none;
+}
+
+.clock .hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: 0% 0%;
+}
+#center {
+    z-index: 100;
+    font-size: 1.4em;
+}
+
+#hours-hand {
+    height: 5px;
+    background-color: white;
+    width: calc(var(--clock-diameter) * 0.3);
+}
+
+.hours-rotation {
+    animation: rotate 43200s linear infinite;
+}
+
+#minutes-hand {
+    height: 3px;
+    background-color: white;
+    width: calc(var(--clock-diameter) * 0.43);
+}
+
+.minutes-rotation {
+    animation: rotate 3600s linear infinite;
+}
+
+#seconds-hand {
+    height: 1px;
+    background-color: white;
+    width: calc(var(--clock-diameter) * 0.43);
+}
+
+.seconds-rotation {
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: translateY(-50%) rotateZ(360deg);
+    }
+}
