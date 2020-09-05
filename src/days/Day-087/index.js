@@ -12,8 +12,6 @@ const rightCtx = canvasRight.getContext('2d');
 const frontCtx = canvasFront.getContext('2d');
 const backCtx = canvasBack.getContext('2d');
 
-const cube = document.querySelector('.cube');
-
 const canvases = [
     {
         canvas: canvasTop,

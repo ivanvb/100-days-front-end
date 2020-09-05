@@ -1,5 +1,6 @@
 let yPos = 65;
 let zPos = 0;
+const cube = document.querySelector('.cube');
 
 // Directions
 const UP = 0;
