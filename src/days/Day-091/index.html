@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Half Meme Generator</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <input type="file" id="img" title="&nbsp;" accept=".png, .jpg, .jpeg" />
+        <label for="img"></label>
+        <div class="container" style="display: none">
+            <input class="top" placeholder="TOP TEXT" maxlength="25" />
+            <img src="#" alt="" />
+            <input class="bottom" placeholder="BOTTOM TEXT" maxlength="25" />
+        </div>
+        <p id="message" style="display: none">Saving Feature Coming Soon!</p>
+    </body>
+    <script src="./index.js"></script>
+</html>

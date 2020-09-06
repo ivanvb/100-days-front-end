@@ -1,0 +1,88 @@
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 350px;
+    width: 350px;
+    border: 1px solid black;
+}
+
+.container > input {
+    position: absolute;
+    left: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.8rem;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    text-align: center;
+    caret-color: black;
+    word-break: break-word;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+input:nth-of-type(1) {
+    top: 0;
+}
+
+input:nth-of-type(2) {
+    bottom: 0;
+}
+
+input[type='file'] + label,
+#message {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#message {
+    top: 50px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+input[type='file'] + label {
+    position: relative;
+    display: block;
+    top: 20px;
+}
+
+input[type='file'] + label::after {
+    position: relative;
+    display: inline;
+    content: 'Upload a File';
+    cursor: pointer;
+    background-color: lightgray;
+    padding: 10px;
+    box-shadow: 2px 2px darkgray;
+}
