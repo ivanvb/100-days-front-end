@@ -1,0 +1,99 @@
+:root {
+    --notification-size: 24px;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #f4edfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4d2870;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unread {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #20c44a;
+    font-size: 2.1rem;
+    height: 80px;
+    width: 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 2px 2px 10px #00000044;
+}
+
+.unread::after,
+.unread::before {
+    position: absolute;
+    right: calc(var(--notification-size) / 4 * -1);
+    top: calc(var(--notification-size) / 4 * -1);
+    height: var(--notification-size);
+    width: var(--notification-size);
+    background-color: red;
+    border-radius: 100%;
+}
+
+.unread::after {
+    content: attr(unread);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    z-index: 10;
+    transition: transform 500ms ease-in-out;
+    transform: scale(0);
+}
+
+.unread::before {
+    content: '';
+    opacity: 0;
+}
+
+.pulse::before {
+    animation: pulse 2s linear forwards;
+}
+
+.new-messages::after {
+    transform: scale(1);
+}
+
+button {
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 10px #00000044;
+    background-color: #eaf9ee;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    to {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
