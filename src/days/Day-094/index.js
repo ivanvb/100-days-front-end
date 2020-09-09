@@ -1,5 +1,5 @@
 const grass = document.querySelector('.grass');
-const FLOWERS = ['./img/flower-1.png', './img/flower-2.png', './img/flower-3.png'];
+const FLOWERS = document.querySelectorAll('.flowers > *');
 
 const MIN_TIME = 100;
 const MAX_TIME = 3500;
@@ -29,7 +29,7 @@ async function generateFlowers() {
 
     for (let i = 0; i < number; i++) {
         const flower = document.createElement('img');
-        flower.setAttribute('src', FLOWERS[getRandomInt(0, FLOWERS.length)]);
+        flower.setAttribute('src', FLOWERS[getRandomInt(0, FLOWERS.length)].getAttribute('src'));
         flower.classList.add('flower');
 
         const TOP = getRandomInt(0, 90);

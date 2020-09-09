@@ -35,6 +35,10 @@ body {
     transform-origin: 50% 100%;
 }
 
+.flowers {
+    display: none;
+}
+
 @keyframes grow {
     0% {
         transform: scale(0);
