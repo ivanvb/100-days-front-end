@@ -20,7 +20,6 @@ body {
 .grass {
     height: 350px;
     width: 750px;
-    background-image: url(./img/sprite.png);
     background-size: auto;
     background-repeat: repeat;
     position: relative;
