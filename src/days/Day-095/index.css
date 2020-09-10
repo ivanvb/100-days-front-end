@@ -1,0 +1,31 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkcyan;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    position: absolute;
+    top: 80px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+input {
+    width: 2.8rem;
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px 2px;
+    margin: 8px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+}
