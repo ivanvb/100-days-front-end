@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rebeccapurple;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: deeppink;
+}
+
+.code {
+    width: 250px;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+}
+
+button::after {
+    position: absolute;
+    content: '';
+    height: 13px;
+    width: 10px;
+    border: 2px solid black;
+    border-radius: 2px;
+    background-color: white;
+    top: calc(50% - 2px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button::before {
+    position: absolute;
+    content: '';
+    height: 13px;
+    width: 10px;
+    border: 2px solid black;
+    border-radius: 2px;
+    background-color: white;
+    top: calc(50% + 2px);
+    left: calc(50% + 4px);
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
