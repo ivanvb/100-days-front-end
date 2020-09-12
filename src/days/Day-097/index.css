@@ -1,0 +1,160 @@
+:root {
+    --card-border-radius: 4px;
+    --card-back-inner-padding: 3px;
+    --card-back-percentage: 90%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2d3748;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    perspective: 25rem;
+}
+
+.board {
+    height: 500px;
+    width: 375px;
+    background-color: #fff5f6;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 110px;
+    width: 75px;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+    box-shadow: 2px 2px 6px #00000088;
+    cursor: pointer;
+    transition: transform 200ms ease-in-out;
+    transform-style: preserve-3d;
+    animation: rotate 1s linear infinite;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.back {
+    position: absolute;
+    top: calc(calc(100% - var(--card-back-percentage)) / 2);
+    left: calc(calc(100% - var(--card-back-percentage)) / 2);
+    border-radius: var(--card-border-radius);
+    height: var(--card-back-percentage);
+    width: var(--card-back-percentage);
+    background-color: darkred;
+    box-sizing: border-box;
+    padding: var(--card-back-inner-padding);
+    z-index: 1;
+}
+
+.front {
+    background-color: white;
+    border-radius: var(--card-border-radius);
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(-1px) scale(-1, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.flipped-card {
+    animation: flip 250ms forwards;
+}
+
+.flipped-card .front {
+    z-index: 10;
+}
+
+.unflip {
+    animation: unflip 250ms forwards;
+}
+
+.disappear {
+    animation: disappear 500ms ease-in-out forwards;
+}
+
+.layer-1,
+.layer-2 {
+    box-sizing: border-box;
+    height: calc(100% - calc(var(--card-back-inner-padding) * 2));
+    width: calc(100% - calc(var(--card-back-inner-padding) * 2));
+    border-radius: var(--card-border-radius);
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 9px,
+        white 1px,
+        white 10px
+    );
+    position: absolute;
+}
+
+.layer-2 {
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 9px,
+        white 1px,
+        white 10px
+    );
+}
+
+@keyframes appear {
+    from {
+        transform: translate(-100%, -900%);
+    }
+
+    to {
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: translate(0) rotateY(0deg);
+    }
+
+    to {
+        transform: translate(0) rotateY(180deg);
+    }
+}
+
+@keyframes unflip {
+    from {
+        transform: translate(0) rotateY(180deg);
+    }
+
+    to {
+        transform: translate(0) rotateY(0deg);
+    }
+}
+
+@keyframes disappear {
+    from {
+        transform: translate(0) rotateY(180deg);
+    }
+
+    to {
+        transform: translate(-500%, -500%) rotateY(180deg);
+    }
+}
