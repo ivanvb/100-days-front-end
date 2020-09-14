@@ -26,7 +26,6 @@ h1 {
 }
 
 li {
-    list-style-image: url('./images/pets_24px_outlined.svg');
     vertical-align: middle;
     display: flex;
     align-items: center;
