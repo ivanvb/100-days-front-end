@@ -1,3 +1,7 @@
+/**
+ * Script used to fix some of the inconsistencies that happened while building
+ * with Parcel.
+ */
 const fs = require('fs');
 const path = require('path');
 

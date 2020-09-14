@@ -1,3 +1,8 @@
+/**
+ * Script used to generate the index page where all the projects are
+ * displayed with a link to their corresponding website.
+ */
+
 const fs = require('fs');
 const path = require('path');
 
