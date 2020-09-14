@@ -5,3 +5,5 @@ index.build.html
 
 .cache
 .vscode
+**/.vscode/**
+**/.vscode_cobol/**
