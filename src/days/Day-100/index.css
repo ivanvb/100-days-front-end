@@ -1,0 +1,72 @@
+:root {
+    --initial-delay: 500ms;
+    --delay-between-images: 150ms;
+
+    --duration: 750ms;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    background-color: transparent;
+    position: relative;
+    background-color: white;
+}
+
+.image-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-container:nth-of-type(1) {
+    clip-path: polygon(100% 0%, 100% 200%, -100% 0%);
+    animation: disappear var(--duration) linear forwards var(--initial-delay);
+}
+
+.image-container:nth-last-of-type(1) {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+    animation: appear var(--duration) linear forwards
+        calc(var(--initial-delay) + var(--delay-between-images));
+}
+
+@keyframes disappear {
+    from {
+        clip-path: polygon(100% 0%, 100% 200%, -100% 0%);
+    }
+
+    to {
+        clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+    }
+}
+
+@keyframes appear {
+    from {
+        clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+    }
+
+    to {
+        clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
+    }
+}
