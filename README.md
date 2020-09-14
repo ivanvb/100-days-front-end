@@ -19,3 +19,36 @@ The only exception to this happens in the build process, where I will use my own
 Also, I may use some tools such as [Babel](https://babeljs.io/) or [PostCSS](https://postcss.org/) to add compatibility with older browsers.
 
 **Note:** To reset browser default I've included a generic `reset.css` file in some of the projects when I find it necessary.
+
+---
+
+**Completed on Sept. 14, 2020 🥳**
+
+## Takeaways
+
+After completing these 100 days of code I can say I've practiced quite a lot and explored many of the technologies that are used in some of the popular libraries and packages we use for building the web. And not only that, but this also gave me the opportunity to face some of the challenge that come when using these "low level" technologies and appreciating the abstraction that many of these libraries offer even more.
+
+Among the many concepts I was able to practice while doing these daily projects are:
+
+-   CSS Animations
+-   CSS Transitions
+-   SVG manipulation
+-   Creating plain Javascript scripts
+-   Intersection Observer
+-   Flexbox
+-   Grid Layout
+-   Notifications API
+-   3D shapes
+-   Canvas
+-   The ::before and ::after pseudo elements
+
+Finally, these are some of my favorites projects that came out of this process
+
+-   [Modern Art Generator](https://ivanvb.github.io/100-days-front-end/days/Day-031/index.html)
+-   [Web iPhone](https://ivanvb.github.io/100-days-front-end/days/Day-017/index.html)
+-   [Animated tic tac toe](https://ivanvb.github.io/100-days-front-end/days/Day-015/index.html)
+-   [Conway's Game of life](https://ivanvb.github.io/100-days-front-end/days/Day-015/index.html)
+-   [Space Cube](https://ivanvb.github.io/100-days-front-end/days/Day-085/index.html)
+-   [Memory Card Game](https://ivanvb.github.io/100-days-front-end/days/Day-097/index.html)
+
+And remember, you can check all the other ones [here!](https://ivanvb.github.io/100-days-front-end/)
