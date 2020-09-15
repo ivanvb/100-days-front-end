@@ -1,6 +1,6 @@
 # 100 Days of Front End
 
-I will build a mini website in plain HTML, CSS and Javascript for 100 days. Each day's website will be different.
+I will build a mini website in plain HTML, CSS and Javascript for 100 days, these websites will be proof of concepts in many cases that will allow me to practice some specific concept while building something with it at the same time!
 
 You can check my progress [here](https://ivanvb.github.io/100-days-front-end/)
 
@@ -16,7 +16,7 @@ For the duration of this project I will build a mini project using only HTML, CS
 
 The only exception to this happens in the build process, where I will use my own build scripts to dynamically add each day's project to the [Homescreen](https://ivanvb.github.io/100-days-front-end/), for this I may also install some external libraries if needed as this has nothing to do with front end development.
 
-Also, I may use some tools such as [Babel](https://babeljs.io/) or [PostCSS](https://postcss.org/) to add compatibility with older browsers.
+Also, I may use some tools such as [Babel](https://babeljs.io/) or [PostCSS](https://postcss.org/) to add cross-browser compatibility, however cross-browser compatibility is not the main focus of these projects, so keep that in mind.
 
 **Note:** To reset browser default I've included a generic `reset.css` file in some of the projects when I find it necessary.
 
