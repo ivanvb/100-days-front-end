@@ -47,7 +47,7 @@ Finally, these are some of my favorites projects that came out of this process
 -   [Modern Art Generator](https://ivanvb.github.io/100-days-front-end/days/Day-031/index.html)
 -   [Web iPhone](https://ivanvb.github.io/100-days-front-end/days/Day-017/index.html)
 -   [Animated tic tac toe](https://ivanvb.github.io/100-days-front-end/days/Day-015/index.html)
--   [Conway's Game of life](https://ivanvb.github.io/100-days-front-end/days/Day-015/index.html)
+-   [Conway's Game of life](https://ivanvb.github.io/100-days-front-end/days/Day-042/index.html)
 -   [Space Cube](https://ivanvb.github.io/100-days-front-end/days/Day-085/index.html)
 -   [Memory Card Game](https://ivanvb.github.io/100-days-front-end/days/Day-097/index.html)
 
